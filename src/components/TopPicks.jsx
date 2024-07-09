@@ -63,14 +63,14 @@ export default function Toppicks() {
                 </div>
 
                 {/* Fourth product */}
-                <div className="md:hidden lg:flex flex-col items-center text-text-pink justify-center gap-2 roboto-slab-regular">
+                <div className="flex flex-col items-center text-text-pink justify-center gap-2 roboto-slab-regular">
                     <div className="img w-[200px] h-[200px] border-4 border-solid border-neutralPink rounded-full overflow-hidden">
-                        <img src={passionPod} className="w-full h-full object-cover object-center" alt="" />
+                        <img src={passionPod} className="w-full h-full object-cover object-center" alt="Passion Pod" />
                     </div>
                     <div className="text flex flex-col justify-center items-center">
                         <h4 className="text-xl">Passion Pod</h4>
                         <p className="text-base">
-                            {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(16000)}
+                            {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(18000)}
                         </p>
                     </div>
                     <button className="bg-dullYellow rounded-full roboto-slab-medium py-1 px-10">

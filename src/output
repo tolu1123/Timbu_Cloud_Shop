@@ -929,6 +929,22 @@ video {
   background-image: url('./../../public/images/hero.jpeg');
 }
 
+.bg-\[url\(\'\.\.\/\.\.\/images\/whisper-of-joy\.jpeg\'\)\] {
+  background-image: url('../../images/whisper-of-joy.jpeg');
+}
+
+.bg-\[url\(\'\.\.\/\.\.\/images\/elysian-essence\.jpeg\'\)\] {
+  background-image: url('../../images/elysian-essence.jpeg');
+}
+
+.bg-\[url\(\'\.\.\/\.\.\/images\/sublime-serenity\.jpeg\'\)\] {
+  background-image: url('../../images/sublime-serenity.jpeg');
+}
+
+.bg-\[url\(\'\.\.\/\.\.\/images\/divine-pleasure\.jpeg\'\)\] {
+  background-image: url('../../images/divine-pleasure.jpeg');
+}
+
 .bg-cover {
   background-size: cover;
 }

@@ -15,7 +15,7 @@ export default function ThrillSection() {
                 {/* The first gala image */}
                 <div className="gala-1 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../public/images/whisper-of-joy.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                    <div className="gala-img w-full bg-[url('../../images/whisper-of-joy.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
 
                     </div>
 
@@ -35,7 +35,7 @@ export default function ThrillSection() {
                 {/* The second gala image */}
                 <div className="gala-1 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../public/images/elysian-essence.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                    <div className="gala-img w-full bg-[url('../../images/elysian-essence.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
 
                     </div>
 
@@ -55,7 +55,7 @@ export default function ThrillSection() {
                 {/* The third gala image */}
                 <div className="gala-1 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../public/images/sublime-serenity.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                    <div className="gala-img w-full bg-[url('../../images/sublime-serenity.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
 
                     </div>
 
@@ -75,7 +75,7 @@ export default function ThrillSection() {
                 {/* The fourth gala image */}
                 <div className="gala-4 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../public/images/divine-pleasure.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                    <div className="gala-img w-full bg-[url('../../images/divine-pleasure.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
 
                     </div>
 

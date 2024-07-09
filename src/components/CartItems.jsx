@@ -31,7 +31,7 @@ export default function CartItems() {
                     {/* First cart item */}
                     <div className="cart-item flex flex-col sm:flex-row justify-center items-center">
 
-                        <div className="cart-item-image w-full sm:w-[25%] aspect-square bg-[url('../../public/images/radiant-delight.jpeg')] bg-left bg-cover rounded-md">
+                        <div className="cart-item-image w-full sm:w-[25%] aspect-square bg-[url('../../images/radiant-delight.jpeg')] bg-left bg-cover rounded-md">
                             
                         </div>
                         <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">

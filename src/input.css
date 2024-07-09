@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+font-family: "Poppins", sans-serif;
+font-weight: 200;
+font-style: normal;
+}
+
+.poppins-light {
+font-family: "Poppins", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+.poppins-regular {
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.poppins-medium {
+font-family: "Poppins", sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+.poppins-semibold {
+font-family: "Poppins", sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+
+.poppins-bold {
+font-family: "Poppins", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+.poppins-extrabold {
+font-family: "Poppins", sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+.poppins-black {
+font-family: "Poppins", sans-serif;
+font-weight: 900;
+font-style: normal;
+}
+
+.poppins-thin-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 100;
+font-style: italic;
+}
+
+.poppins-extralight-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 200;
+font-style: italic;
+}
+
+.poppins-light-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 300;
+font-style: italic;
+}
+
+.poppins-regular-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+font-style: italic;
+}
+
+.poppins-medium-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 500;
+font-style: italic;
+}
+
+.poppins-semibold-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 600;
+font-style: italic;
+}
+
+.poppins-bold-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 700;
+font-style: italic;
+}
+
+.poppins-extrabold-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 800;
+font-style: italic;
+}
+
+.poppins-black-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 900;
+font-style: italic;
+}
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900 */
+
+/* .roboto-slab-<uniquifier> {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+.roboto-slab-regular {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.roboto-slab-medium {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.roboto-slab-semibold {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.just-another-hand {
+    font-family: "Just Another Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+:root {
+    --lightPink: #EA397D;
+    scrollbar-width: auto;
+    scrollbar-color: var(--lightPink);
+}
+/* For WebKit (Safari, Chrome, etc.) */
+::-webkit-scrollbar {
+    width: auto; /* or any suitable width */
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--lightPink); /* Track color */
+    /* border-radius: 10px; */
+    /* border: 3px solid var(--lightPink); Handle border */
+}
+
+body {
+    /* width: 100vw; */
+    height: 100vh;
+    
+}
+
+.hero {
+    min-height: max(915px, fit-content);
+    background-image: url('../public/images/hero.jpeg');
+    background-color: rgba(0, 0, 0, 0.31);
+    background-size: cover;
+    background-position: top center;
+    background-blend-mode: multiply;
+}
+.hero-product img {
+    object-fit: 170%;
+}
+.thrill-gallery > div {
+    background-repeat: no-repeat;
+    transition: all 1s linear;
+}
+.gala-1:hover {
+    background-size: 130%;
+}
+
+/* Remove scroll from the number element */
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 639px) {
+    .transTop {
+        transform: translateY(-2000%);
+        opacity: 0;
+    }
+    .transTopNormal {
+        transform: translateY(170px);
+        opacity: 1;
+    }
+    .dropDown {
+        padding-top: 10px;
+        padding-bottom: 60px;
+        background-color: #fff;
+    }
+    .dropDown li a {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+@media (min-width: 640px) {
+    .hero {
+        width: 100%;
+        /* height: 100vh; */
+        aspect-ratio: 1440/887;
+        /* height: max(450px, 68%); */
+    }
+}

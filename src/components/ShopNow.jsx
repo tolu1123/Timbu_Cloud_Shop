@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import etherealBloom from '../../public/images/ethereal-bloom.jpeg';
+import noirEclipse from '../../public/images/noir-eclipse.jpeg';
+import amberSerenity from '../../public/images/amber-serenity.jpeg';
+import RadiantDelight from '../../public/images/radiant-delight.jpeg';
+
 export default function ShopNow() {
     return (
         <div className="shop-now px-5 mt-20 mb-10">
@@ -17,8 +22,8 @@ export default function ShopNow() {
                 <div className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:w-[110%] sm:hover:z-[6] sm:hover:-translate-y-5">
                 
                      
-                    <div className="product-img w-full aspect-[386/365] bg-[url('../../public/images/ethereal-bloom.jpeg')] bg-left bg-cover ">
-
+                    <div className="product-img w-full aspect-[386/365] ">
+                        <img className="w-full h-full object-center object-cover" src={etherealBloom} alt="Ethereal Bloom" />
                     </div>
                     <div className="product-info px-5 pt-3 pb-10 text-livelyPink">
                         <div className="flex flex-col justify-center items-left">
@@ -40,8 +45,8 @@ export default function ShopNow() {
                 <div className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:w-[110%] sm:hover:z-[6] sm:hover:-translate-y-5 sm:hover:-translate-x-[5%]">
                 
                      
-                    <div className="product-img w-full aspect-[386/365] bg-[url('../../public/images/noir-eclipse.jpeg')] bg-left bg-cover ">
-
+                    <div className="product-img w-full aspect-[386/365] ">
+                        <img className="w-full h-full object-center object-cover" src={noirEclipse} alt="Noir Eclipse" />
                     </div>
                     <div className="product-info px-5 pt-3 pb-10 text-livelyPink">
                         <div className="flex flex-col justify-center items-left">
@@ -63,8 +68,8 @@ export default function ShopNow() {
                 <div className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-200 sm:hover:w-[110%] sm:hover:z-[6] sm:hover:-translate-y-5">
                 
                      
-                    <div className="product-img w-full aspect-[386/365] bg-[url('../../public/images/amber-serenity.jpeg')] bg-left bg-cover ">
-
+                    <div className="product-img w-full aspect-[386/365] ">
+                        <img className="w-full h-full object-center object-cover" src={amberSerenity} alt="Amber serenity" />
                     </div>
                     <div className="product-info px-5 pt-3 pb-10 text-livelyPink">
                         <div className="flex flex-col justify-center items-left">
@@ -84,10 +89,8 @@ export default function ShopNow() {
                 </div>
 
                 <div className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-200 sm:hover:w-[110%] sm:hover:z-[6] sm:hover:-translate-y-5">
-                
-                     
-                    <div className="product-img w-full aspect-[386/365] bg-[url('../../public/images/radiant-delight.jpeg')] bg-left bg-cover ">
-
+                    <div className="product-img w-full aspect-[386/365] ">
+                        <img className="w-full h-full object-center object-cover" src={RadiantDelight} alt="Radiant Delight" />
                     </div>
                     <div className="product-info px-5 pt-3 pb-10 text-livelyPink">
                         <div className="flex flex-col justify-center items-left">

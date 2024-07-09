@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import whisperOfJoy from '../../public/images/whisper-of-joy.jpeg';
+import elysianEssence from '../../public/images/elysian-essence.jpeg';
+import sublimeSerenity from '../../public/images/sublime-serenity.jpeg';
+import divinePleasure from '../../public/images/divine-pleasure.jpeg';
+
 export default function ThrillSection() {
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center px-5 mt-10 mb-10 gap-10">
@@ -15,8 +20,8 @@ export default function ThrillSection() {
                 {/* The first gala image */}
                 <div className="gala-1 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../images/whisper-of-joy.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
-
+                    <div className="gala-img w-full aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                        <img className="w-full h-full object-center object-cover" src={whisperOfJoy} alt="Whisper of Joy" />
                     </div>
 
                     <div className="w-full flex flex-col justify-center items-center gap-2 absolute z-[6] bottom-5">
@@ -35,8 +40,8 @@ export default function ThrillSection() {
                 {/* The second gala image */}
                 <div className="gala-1 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../images/elysian-essence.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
-
+                    <div className="gala-img w-full aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                        <img className="w-full h-full object-center object-cover" src={elysianEssence} alt="Elysian Essence" />
                     </div>
 
                     <div className="w-full flex flex-col justify-center items-center gap-2 absolute z-[6] bottom-5">
@@ -55,8 +60,8 @@ export default function ThrillSection() {
                 {/* The third gala image */}
                 <div className="gala-1 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../images/sublime-serenity.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
-
+                    <div className="gala-img w-full aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                        <img className="w-full h-full object-center object-cover" src={sublimeSerenity} alt="Sublime Serenity" />
                     </div>
 
                     <div className="w-full flex flex-col justify-center items-center gap-2 absolute z-[6] bottom-5">
@@ -75,8 +80,8 @@ export default function ThrillSection() {
                 {/* The fourth gala image */}
                 <div className="gala-4 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
-                    <div className="gala-img w-full bg-[url('../../images/divine-pleasure.jpeg')] bg-center bg-cover aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
-
+                    <div className="gala-img w-full aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
+                        <img className="w-full h-full object-center object-cover" src={divinePleasure} alt="Divine Pleasure" />
                     </div>
 
                     <div className="w-full flex flex-col justify-center items-center gap-2 absolute z-[6] bottom-5">

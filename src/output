@@ -698,10 +698,6 @@ video {
   aspect-ratio: 386/365;
 }
 
-.aspect-\[386\/\] {
-  aspect-ratio: 386/;
-}
-
 .h-\[200px\] {
   height: 200px;
 }
@@ -895,70 +891,6 @@ video {
 .bg-glassyBlack {
   --tw-bg-opacity: 1;
   background-color: rgb(24 27 31 / var(--tw-bg-opacity));
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/amber-serenity\.jpeg\'\)\] {
-  background-image: url('../../public/images/amber-serenity.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/divine-pleasure\.jpeg\'\)\] {
-  background-image: url('../../public/images/divine-pleasure.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/elysian-essence\.jpeg\'\)\] {
-  background-image: url('../../public/images/elysian-essence.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/ethereal-bloom\.jpeg\'\)\] {
-  background-image: url('../../public/images/ethereal-bloom.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/noir-eclipse\.jpeg\'\)\] {
-  background-image: url('../../public/images/noir-eclipse.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/radiant-delight\.jpeg\'\)\] {
-  background-image: url('../../public/images/radiant-delight.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/sublime-serenity\.jpeg\'\)\] {
-  background-image: url('../../public/images/sublime-serenity.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/public\/images\/whisper-of-joy\.jpeg\'\)\] {
-  background-image: url('../../public/images/whisper-of-joy.jpeg');
-}
-
-.bg-\[url\(\'\.\/\.\.\/\.\.\/public\/images\/hero\.jpeg\'\)\] {
-  background-image: url('./../../public/images/hero.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/images\/whisper-of-joy\.jpeg\'\)\] {
-  background-image: url('../../images/whisper-of-joy.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/images\/elysian-essence\.jpeg\'\)\] {
-  background-image: url('../../images/elysian-essence.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/images\/sublime-serenity\.jpeg\'\)\] {
-  background-image: url('../../images/sublime-serenity.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/\.\.\/images\/divine-pleasure\.jpeg\'\)\] {
-  background-image: url('../../images/divine-pleasure.jpeg');
-}
-
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-center {
-  background-position: center;
-}
-
-.bg-left {
-  background-position: left;
 }
 
 .object-cover {
@@ -1351,6 +1283,12 @@ body {
   height: 100vh;
 }
 
+body::before {
+  content: "";
+  display: none;
+  background-image: url('../public/images/hero.jpeg');
+}
+
 .hero {
   min-height: max(915px, -moz-fit-content);
   min-height: max(915px, fit-content);
@@ -1597,10 +1535,6 @@ input[type=number] {
     display: grid;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:translate-x-0 {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1652,10 +1586,6 @@ input[type=number] {
 }
 
 @media (min-width: 1024px) {
-  .lg\:flex {
-    display: flex;
-  }
-
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

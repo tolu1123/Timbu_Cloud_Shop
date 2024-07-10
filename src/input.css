@@ -169,6 +169,11 @@ body {
     height: 100vh;
     
 }
+body::before {
+    content: "";
+    display: none;
+    background-image: url('../public/images/hero.jpeg');
+  }
 
 .hero {
     min-height: max(915px, fit-content);

@@ -5,7 +5,7 @@ import heroProduct from './../../public/images/hero-product.png';
 
 export default function Hero() {
     return (
-        <div className="hero w-full bg-[url('./../../public/images/hero.jpeg')] items-center sm:items-start bg-cover pt-[164px] flex flex-row justify-center flex-wrap">
+        <div className="hero w-full items-center sm:items-start pt-[164px] flex flex-row justify-center flex-wrap">
             {/* The hero has two div's */}
             <div className="imageDiv hidden sm:block sm:w-1/2">
 

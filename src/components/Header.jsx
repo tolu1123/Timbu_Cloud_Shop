@@ -27,12 +27,14 @@ export default function Header(props) {
       setNavSm(true);
     }
 
+    console.log(dropDown)
+
     window.addEventListener("resize", navChecker);
 
     return () => {
       window.removeEventListener("resize", navChecker);
     };
-  }, []);
+  }, [dropDown]);
 
   return (
     <header className={`w-full flex flex-row justify-center items-center absolute ${textColor} px-5 py-8`}>
@@ -42,14 +44,15 @@ export default function Header(props) {
         {/* <div class="w-full nav-sm flex flex-row justify-between items-center"> */}
         <span
           className="hamburger inline-flex justify-start text-3xl"
-          onClick={() =>
-            setDropDown((dropDown) => {
-              setDropDown(!dropDown);
-            })
+          onClick={() => {
+            setDropDown(dropDown => !dropDown);
+            
+            console.log(dropDown, 'toluburg')
+            }
           }
         >
           {dropDown ? (
-            <i class="fa-sharp fa-solid fa-xmark"></i>
+            <i className="fa-sharp fa-solid fa-xmark"></i>
           ) : (
             <i className="fa-sharp fa-solid fa-bars"></i>
           )}

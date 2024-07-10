@@ -11,7 +11,7 @@ export default function CartItems() {
     const navigate = useNavigate();
 
     return (
-        <div className="w-full flex flex-col-reverse md:flex-row md:flex-nowrap gap-x-14 pt-10 px-5 relative">
+        <div className="w-full flex flex-col-reverse md:flex-row md:flex-nowrap gap-x-14 pt-[120px] px-5 relative">
             <div className="md:w-7/12 lg:w-9/12">
                 <div
                     className="font-medium text-tradyPink text-[17px] border-b border-solid border-tradyPink pb-3"

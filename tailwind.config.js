@@ -15,7 +15,8 @@ export default {
       'bleetYellow': '#FFDD25',
       'glassyBlack': '#181B1F',
       'tradyPink': '#EA377C',
-      'offWhite': '#898989'
+      'offWhite': '#898989',
+      'offBlack': '#333333',
     }
   },
   plugins: [],

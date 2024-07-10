@@ -39,11 +39,11 @@ export default function Header(props) {
   return (
     <header className={`w-full flex flex-row justify-center items-center absolute ${textColor} px-5 py-8`}>
       {/* Nav for mobile */}
-      <nav className={`w-full ${textColor} flex items-center sm:hidden`}>
+      <nav className={`w-full ${textColor} flex items-center lg:hidden`}>
         {/* The nav for mobile view  */}
         {/* <div class="w-full nav-sm flex flex-row justify-between items-center"> */}
         <span
-          className="hamburger inline-flex justify-start text-3xl"
+          className="hamburger inline-flex justify-start text-3xl md:text-4xl cursor-pointer"
           onClick={() => {
             setDropDown(dropDown => !dropDown);
             
@@ -70,7 +70,7 @@ export default function Header(props) {
           {/* </h1> */}
         </a>
 
-        <div className="flex items-center gap-4 text-xl ml-auto">
+        <div className="flex items-center gap-4 md:gap-12 text-xl md:text-3xl md:pr-10 ml-auto">
           {/* The search icon */}
           <a className="search">
             <i className="fa-solid fa-magnifying-glass"></i>
@@ -109,7 +109,7 @@ export default function Header(props) {
       </nav>
 
       {/* This is the nav that appears at medium screens */}
-      <nav className="w-full hidden sm:flex justify-between items-center gap-24">
+      <nav className="w-full hidden lg:flex justify-between items-center gap-24">
         <div className="relative left-1/2 -translate-x-1/2 flex justify-center items-center gap-24 just-another-hand">
           <a href="" className="inline-flex text-3xl">
             About Us

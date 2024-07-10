@@ -237,4 +237,24 @@ input[type=number] {
         aspect-ratio: 1440/887;
         /* height: max(450px, 68%); */
     }
+
+}
+
+.transTop {
+    transform: translateY(-2000%);
+    opacity: 0;
+}
+.transTopNormal {
+    transform: translateY(170px);
+    opacity: 1;
+}
+.dropDown {
+    padding-top: 10px;
+    padding-bottom: 60px;
+    background-color: #fff;
+}
+.dropDown li a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
 }

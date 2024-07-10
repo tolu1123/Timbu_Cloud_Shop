@@ -3,9 +3,6 @@ import ReactDOM from "react-dom/client";
 
 
 import blissfulWand from '../../public/images/blissful-wand.jpeg';
-import delightDuet from '../../public/images/delight-duet.jpeg';
-import euphoriaElixir from '../../public/images/euphoria-elixir.jpeg';
-import passionPod from '../../public/images/passion-pod.jpeg';
 import RadiantDelight from '../../public/images/radiant-delight.jpeg';
 
 import { useNavigate } from "react-router";
@@ -14,62 +11,62 @@ export default function CartItems() {
     const navigate = useNavigate();
 
     return (
-        <div className="w-full flex flex-col-reverse md:flex-row md:flex-nowrap gap-x-14 pt-10 px-5">
+        <div className="w-full flex flex-col-reverse md:flex-row md:flex-nowrap gap-x-14 pt-10 px-5 relative">
             <div className="md:w-7/12 lg:w-9/12">
-            <div
-                className="font-medium text-tradyPink text-[17px] border-b border-solid border-tradyPink pb-3"
-            >
-                <h5 className="">
-                <span className="cartCounter"> 1</span> product in cart
-                </h5>
-            </div>
-
-            {/* The data container that will be filled with the products we have in our cart  */}
-            <div
-                className="cartDisplay text-deepGreen divide-y divide-solid divide-tradyPink"
-            >
-                <div className="flex flex-col gap-5 py-5 cart-item-container">
-                    {/* First cart item */}
-                    <div className="cart-item flex flex-col sm:flex-row justify-center items-center">
-                    
-                        <div className="cart-item-img w-full sm:w-[25%] aspect-square ">
-                            <img className="w-full h-full object-center object-cover" src={RadiantDelight} alt="Radiant Delight" />
-                        </div>
-                        <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">
-                            <div className="w-full flex flex-row justify-between ">
-                                <h4 className="roboto-slab-medium text-2xl w-full">Radiant delight</h4>
-                                <span className="text-2xl">
-                                    <i className="fa-regular fa-trash-can"></i>
-                                </span>
-                            </div>
-                            
-                            <p className="roboto-slab-medium">Joy in Heaven</p>
-                            <div className="counter flex flex-row justify-between w-full">
-                                <div className="flex flex-row justify-center items-center w-fit border border-solid border-tradyPink rounded-full">
-                                    <button className="decrement  rounded-full w-[32px] h-[32px]">
-                                        <i className="fa-solid fa-minus"></i>
-                                    </button>
-                                    
-                                    <input type="text" inputMode="numeric" className="w-[32px] h-[32px] border border-solid border-tradyPink outline-none pl-[16px] rounded caret-tradyPink" />
-
-                                    <button className="increment w-[32px] h-[32px] rounded-full">
-                                        <i className="fa-solid fa-plus"></i>
-                                    </button>
-                                </div>
-
-                                <p className="roboto-slab-semibold text-base">
-                                {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(40000)}
-                                </p>
-                            </div>
-                            
-                        </div>
-                    </div>
+                <div
+                    className="font-medium text-tradyPink text-[17px] border-b border-solid border-tradyPink pb-3"
+                >
+                    <h5 className="">
+                    <span className="cartCounter"> 1</span> product in cart
+                    </h5>
                 </div>
 
+                {/* The data container that will be filled with the products we have in our cart  */}
+                <div
+                    className="cartDisplay text-deepGreen divide-y divide-solid divide-tradyPink"
+                >
+                    <div className="flex flex-col gap-5 py-5 cart-item-container">
+                        {/* First cart item */}
+                        <div className="cart-item flex flex-col sm:flex-row justify-center items-center">
+                        
+                            <div className="cart-item-img w-full sm:w-[25%] aspect-square ">
+                                <img className="w-full h-full object-center object-cover" src={RadiantDelight} alt="Radiant Delight" />
+                            </div>
+                            <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">
+                                <div className="w-full flex flex-row justify-between ">
+                                    <h4 className="roboto-slab-medium text-2xl w-full">Radiant delight</h4>
+                                    <span className="text-2xl">
+                                        <i className="fa-regular fa-trash-can"></i>
+                                    </span>
+                                </div>
+                                
+                                <p className="roboto-slab-medium">Joy in Heaven</p>
+                                <div className="counter flex flex-row justify-between w-full">
+                                    <div className="flex flex-row justify-center items-center w-fit border border-solid border-tradyPink rounded-full">
+                                        <button className="decrement  rounded-full w-[32px] h-[32px]">
+                                            <i className="fa-solid fa-minus"></i>
+                                        </button>
+                                        
+                                        <input type="text" inputMode="numeric" className="w-[32px] h-[32px] border border-solid border-tradyPink outline-none pl-[16px] rounded caret-tradyPink" />
+
+                                        <button className="increment w-[32px] h-[32px] rounded-full">
+                                            <i className="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+
+                                    <p className="roboto-slab-semibold text-base">
+                                    {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(40000)}
+                                    </p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    
                 
-            
-            </div>
-            
+                </div>
+                
                 {/* Subscribe div */}
                 <div className="flex justify-center items-center">
                     <button className="w-full lg:w-1/2 text-center py-2 poppins-semibold text-lg !border my-4 border-solid border-tradyPink rounded-full text-tradyPink">
@@ -104,6 +101,7 @@ export default function CartItems() {
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div className="md:w-5/12 lg:w-3/12 text-tradyPink">
@@ -126,23 +124,20 @@ export default function CartItems() {
                     </div>
 
                     {/* The div containing the checkout button  */}
-                    <div className="checkOutBtn hidden md:block mt-4 w-full">
-                        {/* <a  onClick={() => { */}
-                            {/* navigate('/checkout') */}
-                        {/* }}> */}
+                     <div className="checkOutBtn hidden md:block mt-4 w-full">
+                         
                         <button
                         className="group w-full p-3 transitions-all duration-300 bg-tradyPink hover:bg-white border border-solid border-tradyPink text-[#fff] rounded-md font-semibold"
                         onClick={() => {
                             navigate('/checkout')
                         }}
                         >
-                        <span className="group-hover:text-tradyPink"
-                            >Proceed to Checkout</span
-                        >
+                        <span className="group-hover:text-tradyPink">
+                            Proceed to Checkout
+                        </span>
                         </button>
-                    {/* </a> */}
 
-                    </div>
+                    </div> 
                 </div>
             </div>
 

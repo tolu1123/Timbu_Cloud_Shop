@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['index.html', './src/components/Header.jsx', './src/components/Hero.jsx', './src/components/TopPicks.jsx', './src/components/ThrillSection.jsx', './src/components/ShopNow.jsx', './src/components/Footer.jsx', './src/components/CartHeader.jsx', './src/component/CartItems.jsx', './src/components/CheckOutHeader.jsx', './src/components/CheckOutProducts.jsx', './src/components/CheckOutForm.jsx', './src/CheckOut.jsx'],
+  content: ['index.html', './src/components/Header.jsx', './src/components/Hero.jsx', './src/components/TopPicks.jsx', './src/components/ThrillSection.jsx', './src/components/ShopNow.jsx', './src/components/Footer.jsx', './src/components/CartHeader.jsx', './src/components/CartItems.jsx', './src/components/CheckOutHeader.jsx', './src/components/CheckOutProducts.jsx', './src/components/CheckOutForm.jsx', './src/CheckOut.jsx'],
   theme: {
     extend: {},
     colors: {

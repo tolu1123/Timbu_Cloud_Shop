@@ -11,7 +11,7 @@ export default function CartHeader() {
         <header className='flex flex-row justify-between items-center shadow-md text-tradyPink px-5 py-8'>
             <div className="text-sm sm:text-lg poppins-semibold">
                 <span className="">
-                    <i class="fa-regular fa-chevron-left"></i>
+                    <i className="fa-regular fa-chevron-left"></i>
                 </span>
                 <span onClick={
                     () => {

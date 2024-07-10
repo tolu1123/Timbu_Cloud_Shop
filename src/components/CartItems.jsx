@@ -39,7 +39,7 @@ export default function CartItems() {
                             <div className="w-full flex flex-row justify-between ">
                                 <h4 className="roboto-slab-medium text-2xl w-full">Radiant delight</h4>
                                 <span className="text-2xl">
-                                    <i class="fa-regular fa-trash-can"></i>
+                                    <i className="fa-regular fa-trash-can"></i>
                                 </span>
                             </div>
                             
@@ -126,17 +126,17 @@ export default function CartItems() {
                     </div>
 
                     {/* The div containing the checkout button  */}
-                    <div class="checkOutBtn hidden md:block mt-4 w-full">
+                    <div className="checkOutBtn hidden md:block mt-4 w-full">
                         {/* <a  onClick={() => { */}
                             {/* navigate('/checkout') */}
                         {/* }}> */}
                         <button
-                        class="group w-full p-3 transitions-all duration-300 bg-tradyPink hover:bg-white border border-solid border-tradyPink text-[#fff] rounded-md font-semibold"
+                        className="group w-full p-3 transitions-all duration-300 bg-tradyPink hover:bg-white border border-solid border-tradyPink text-[#fff] rounded-md font-semibold"
                         onClick={() => {
                             navigate('/checkout')
                         }}
                         >
-                        <span class="group-hover:text-tradyPink"
+                        <span className="group-hover:text-tradyPink"
                             >Proceed to Checkout</span
                         >
                         </button>
@@ -147,15 +147,15 @@ export default function CartItems() {
             </div>
 
              {/* The div containing the checkout button for the mobile screen */}
-            <div class="checkOutBtn w-full fixed left-0 bottom-0 md:hidden bg-white p-5 z-10">
+            <div className="checkOutBtn w-full fixed left-0 bottom-0 md:hidden bg-white p-5 z-10">
             {/* <a > */}
             <button
-                class="group w-full py-4 transitions bg-tradyPink hover:bg-white border border-solid border-tradyPink text-base text-[#fff] rounded-md font-semibold transition-all duration-300"
+                className="group w-full py-4 transitions bg-tradyPink hover:bg-white border border-solid border-tradyPink text-base text-[#fff] rounded-md font-semibold transition-all duration-300"
                 onClick={() => {
                     navigate('/checkout')
                 }}
             >
-                <span class="group-hover:text-tradyPink">Proceed to Checkout</span>
+                <span className="group-hover:text-tradyPink">Proceed to Checkout</span>
             </button>
             {/* </a> */}
             </div>

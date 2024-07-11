@@ -13,7 +13,7 @@ export default function CartHeader() {
                 <span className="">
                     <i className="fa-regular fa-chevron-left"></i>
                 </span>
-                <span onClick={
+                <span className='cursor-pointer' onClick={
                     () => {
                         navigate('/')
                     }

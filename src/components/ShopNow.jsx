@@ -6,9 +6,21 @@ import noirEclipse from '../../public/images/noir-eclipse.jpeg';
 import amberSerenity from '../../public/images/amber-serenity.jpeg';
 import RadiantDelight from '../../public/images/radiant-delight.jpeg';
 
+
+import products from './product.js';
+import ShopNowProducts from './shopNowProducts.jsx';
+console.log(products.length);
+
 export default function ShopNow() {
+    
+    let data = products.map(product => (
+        <ShopNowProducts key={product.productName} product={product}/>
+    )
+)
+
+
     return (
-        <div className="shop-now px-5 mt-20 mb-10">
+        <div id='shopnow' className="shop-now px-5 mt-20 mb-10">
             <div className="shop-now-header mb-10">
                 <h3 className="w-full text-center sm:text-left text-dullPink text-3xl roboto-slab-semibold">
                     Shop Now
@@ -17,9 +29,9 @@ export default function ShopNow() {
 
             {/* Div for the product cards */}
             <div className="products flex flex-col items-center justify-center gap-6 sm:grid sm:grid-cols-3 lg:grid-cols-4 sm:gap-8">
+                {data}
 
-
-                <div className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:w-[110%] sm:hover:z-[6] sm:hover:-translate-y-5">
+                {/* <div className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:w-[110%] sm:hover:z-[6] sm:hover:-translate-y-5">
                 
                      
                     <div className="product-img w-full aspect-[386/365] ">
@@ -107,7 +119,7 @@ export default function ShopNow() {
                             Add to Cart
                         </button>
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </div>

@@ -1,14 +1,29 @@
-import React, {useContext} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import ReactDOM from "react-dom/client";
-
-import products from './heroProduct.js'
 
 import {CartContext} from './CartContext.jsx';
 
+export default function ShopNowProducts(props) {
+    let product = props.product;
 
-export default function Hero() {
+    const {cartContent, setCartContent} = useContext(CartContext);
 
-    const { cartContent, setCartContent } = useContext(CartContext);
+
+    useEffect(() => {
+        // Define a named function for the event listener
+        const handleStorageChange = () => {
+          console.log('actived storage change')
+        //   setCart(JSON.parse(localStorage.getItem('cart')));
+        };
+      
+        // Add event listener to listen for the changes in localStorage
+        window.addEventListener('storage', handleStorageChange);
+      
+        // Return a cleanup function that removes the event listener
+        return () => {
+          window.removeEventListener('storage', handleStorageChange);
+        };
+      }, []);
 
     function addToCart(product) {
         // Check if our cart has been created or not
@@ -74,46 +89,31 @@ export default function Hero() {
         }
     }
 
-    const data = products.map(product => (
-        <div className="hero-product flex flex-col sm:flex-row justify-between">
-                <div className="w-full sm:w-80 sm:aspect-square sm:relative">
-                    <img src={product.productImage} alt="hero-product" className=" h-full object-cover sm:object-top" />
-                </div>
-
-                <div className="flex flex-col justify-center items-center relative -translate-y-[70px] sm:static sm:-translate-y-[0]">
-                    <button className="bg-dullYellow inline-block h-fit text-heroPink text-xl py-3 px-10 roboto-slab-medium rounded-full hover:shadow-md active:bg-white"
-                        onClick={() => {
-                            addToCart(product)
-                        }}
-                    >Add to Cart
-                    </button>
-                </div>
-                
-        </div>
-    ))
-
     return (
-        <div className="hero w-full items-center sm:items-start pt-[164px] flex flex-row justify-center flex-wrap">
-            {/* The hero has two div's */}
-            <div className="imageDiv hidden sm:block sm:w-1/2">
+        <div key={product.productName} className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:z-[6] sm:hover:-translate-y-7">          
+            <div className="product-img w-full aspect-[386/365] ">
+                <img className="w-full h-full object-center object-cover" src={product.productImage} alt="Ethereal Bloom" />
+            </div>
+            <div className="product-info px-5 pt-3 pb-10 text-livelyPink">
+                <div className="flex flex-col justify-center items-left">
+                    <h4 className="roboto-slab-medium text-2xl">{product.productName}</h4>
+                    <p className="product-category roboto-slab-medium">
+                        {product.productText}
+                    </p>
+                    <p className="roboto-slab-semibold text-base">
+                        {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.productPrice}`)}
+                    </p>
+                </div>
 
+                <button 
+                className="w-fit bg-dullYellow rounded-full roboto-slab-medium py-0.5 px-10 text-heroPink mt-2 hover:shadow-md active:bg-white"
+                onClick={() => {
+                    addToCart(product)
+                }}
+                >
+                    Add to Cart
+                </button>
             </div>
-            {/* The hero text */}
-            <div className="heroText p-5 sm:w-1/2 text-white text-3xl  text-center sm:text-left mt-16 sm:text-5xl roboto-slab-regular !leading-[66px]">
-                <h2>
-                    Etheral Bloom: &nbsp; 
-                    <br className="hidden sm:block" />
-                    Captivating Elegance &nbsp;
-                    <br className="hidden sm:block" />
-                    and Unforgettable &nbsp;
-                    <br className="hidden sm:block" />
-                    Allure in every spray.
-                    
-                </h2>
-                
-            </div>
-            {/* The hero product */}
-            {data}
         </div>
     )
 }

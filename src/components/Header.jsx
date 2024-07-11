@@ -1,15 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom/client";
 
 import { useNavigate} from "react-router";
 
+import {CartContext} from './CartContext.jsx';
+
 
 export default function Header(props) {
+
+  const {cartContent, setCartContent} = useContext(CartContext);
+
+  const [noOfItems, setNoOfItems] = useState(0)
+  const [cartEmpty, setCartEmpty] = useState(cartContent.length <= 0 ? false : true);
+
+  useEffect(() => {
+    let cartData = cartContent;
+    let productCount = cartData === null || cartData.length < 0 ? 0 : cartData.reduce((acc, currentElement) => {
+      return parseInt(acc + currentElement.productQty);
+    }, 0);
+    setNoOfItems(productCount);
+
+    setCartEmpty(cartContent.length <= 0 ? false : true);
+  }, [cartContent])
+
+  console.log(cartContent, cartEmpty, noOfItems)
+
+
+  // useEffect(() => {
+  //   // Define a named function for the event listener
+  //   const handleStorageChange = () => {
+  //     console.log('actived storage change')
+  //     // setCart(JSON.parse(localStorage.getItem('cart')));
+  //   };
+  
+  //   // Add event listener to listen for the changes in localStorage
+  //   window.addEventListener('storage', handleStorageChange);
+  
+  //   // Return a cleanup function that removes the event listener
+  //   return () => {
+  //     window.removeEventListener('storage', handleStorageChange);
+  //   };
+  // }, []);
 
   const navigate = useNavigate();
 
   const textColor = props.textColor;
-  console.log(props.textColor)
   const [navSm, setNavSm] = useState(false);
   const [dropDown, setDropDown] = useState(false);
 
@@ -27,7 +62,6 @@ export default function Header(props) {
       setNavSm(true);
     }
 
-    console.log(dropDown)
 
     window.addEventListener("resize", navChecker);
 
@@ -47,7 +81,6 @@ export default function Header(props) {
           onClick={() => {
             setDropDown(dropDown => !dropDown);
             
-            console.log(dropDown, 'toluburg')
             }
           }
         >
@@ -70,18 +103,24 @@ export default function Header(props) {
           {/* </h1> */}
         </a>
 
-        <div className="flex items-center gap-4 md:gap-12 text-xl md:text-3xl md:pr-10 ml-auto">
+        <div className="flex items-center gap-4 md:gap-12 text-xl md:text-3xl pr-5 md:pr-10 ml-auto">
           {/* The search icon */}
           <a className="search">
             <i className="fa-solid fa-magnifying-glass"></i>
           </a>
 
           {/* The cart icon */}
-          <a className="" onClick={() => {
-            navigate("/cart");
-          }}>
-            <i className="fa-solid fa-cart-shopping"></i>
-          </a>
+          <span className="relative">
+            <a className="" onClick={() => {
+              navigate("/cart");
+            }}>
+              <i className="fa-solid fa-cart-shopping"></i>
+            </a>
+
+            {cartEmpty && <span className="bg-naturalPink rounded-full absolute px-2 -translate-y-3">
+              {noOfItems}
+            </span>}
+          </span>
         </div>
 
         <div
@@ -91,13 +130,13 @@ export default function Header(props) {
         >
           <ul className="w-full flex flex-col gap-5">
             <li>
-              <a href="#about">About Us</a>
+              <a href="#aboutus">About Us</a>
             </li>
             <li>
-              <a href="#goals">Contact Us</a>
+              <a href="#shopnow">Shop Now</a>
             </li>
             <li>
-              <a href="#works">FAQs</a>
+              <a href="#faqs">FAQs</a>
             </li>
             <li>
               <a href="#blog">My Account</a>
@@ -111,7 +150,7 @@ export default function Header(props) {
       {/* This is the nav that appears at medium screens */}
       <nav className="w-full hidden lg:flex justify-between items-center gap-24">
         <div className="relative left-1/2 -translate-x-1/2 flex justify-center items-center gap-24 just-another-hand">
-          <a href="" className="inline-flex text-3xl">
+          <a href="#aboutus" className="inline-flex text-3xl">
             About Us
           </a>
 
@@ -127,7 +166,7 @@ export default function Header(props) {
             </h1>
           </a>
 
-          <a href="" className="inline-flex text-3xl">
+          <a href="#shopnow" className="inline-flex text-3xl">
             Shop Now
           </a>
         </div>
@@ -142,11 +181,22 @@ export default function Header(props) {
             <i className="fa-solid fa-user"></i>
           </a>
           {/* The cart icon */}
-          <a  className="" onClick={() => {
-            navigate("/cart");
-          }}>
-            <i className="fa-solid fa-cart-shopping"></i>
-          </a>
+          <span className="relative cursor-pointer">
+            <a  className="relative" onClick={() => {
+              navigate("/cart");
+            }}>
+              <i className="fa-solid fa-cart-shopping"></i>
+            </a>
+
+            { cartEmpty && <span 
+            className="bg-naturalPink rounded-full absolute px-2 -translate-y-3"
+            onClick={() => {
+              navigate('/cart');
+            }}
+            >
+              {noOfItems}
+            </span>}            
+          </span>
         </div>
       </nav>
     </header>

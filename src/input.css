@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .poppins-thin {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
@@ -149,6 +150,7 @@ font-style: italic;
     --lightPink: #EA397D;
     scrollbar-width: auto;
     scrollbar-color: var(--lightPink);
+    scroll-behavior: smooth;
 }
 /* For WebKit (Safari, Chrome, etc.) */
 ::-webkit-scrollbar {

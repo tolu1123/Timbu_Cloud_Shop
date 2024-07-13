@@ -1,13 +1,19 @@
 import React, {useState, useEffect, useContext} from "react";
 import ReactDOM from "react-dom/client";
 
+import { useNavigate } from "react-router";
+
 import {CartContext} from './CartContext.jsx';
+import { ShoppingContext } from "./ShoppingContext.jsx";
 
 export default function ShopNowProducts(props) {
     let product = props.product;
+    const navigate = useNavigate();
 
     const {cartContent, setCartContent} = useContext(CartContext);
+    const {shoppingBasket, setShoppingBasket} = useContext(ShoppingContext);
 
+    // console.log(product.description.split('\n')[0].slice(0, -1));
 
     useEffect(() => {
         // Define a named function for the event listener
@@ -24,6 +30,11 @@ export default function ShopNowProducts(props) {
           window.removeEventListener('storage', handleStorageChange);
         };
       }, []);
+
+    //Update the shopping basket
+    useEffect(() => {
+        // console.log(shoppingBasket);
+    }, [shoppingBasket])
 
     function addToCart(product) {
         // Check if our cart has been created or not
@@ -89,29 +100,52 @@ export default function ShopNowProducts(props) {
         }
     }
 
+    // Writing the add to shopping basket function
+    function addToBasket(product) {
+        const basket = {
+            productName: product.name,
+            productTag: product.description.split('\n')[0].slice(0, -1),
+            productText: product.description.split('\n')[1],
+            productImage: product.photos, //An array of images
+            productPrice: product.current_price[0]['NGN'][0],
+            productQty: 1,
+            availableQty: product.available_quantity,
+            id: product.unique_id
+        }
+
+        // // Save to localStorage to persist the data
+        localStorage.setItem('shoppingBasket', JSON.stringify(basket));
+
+        // // Update the shopping basket in the ShoppingContext
+        setShoppingBasket(basket);
+        // Redirect to the product page
+        navigate('/product');
+    }
+
     return (
-        <div key={product.productName} className="w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:z-[6] sm:hover:-translate-y-7">          
+        <div key={product.productName} className="group w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:z-[6] sm:hover:-translate-y-7">          
             <div className="product-img w-full aspect-[386/365] ">
-                <img className="w-full h-full object-center object-cover" src={product.productImage} alt="Ethereal Bloom" />
+            
+                <img className="w-full h-full object-center object-cover" src={`https://api.timbu.cloud/images/${product.photos[1].url}`} alt="Ethereal Bloom" />
             </div>
             <div className="product-info px-5 pt-3 pb-10 text-livelyPink">
                 <div className="flex flex-col justify-center items-left">
-                    <h4 className="roboto-slab-medium text-2xl">{product.productName}</h4>
+                    <h4 className="roboto-slab-medium text-2xl">{product.name}</h4>
                     <p className="product-category roboto-slab-medium">
-                        {product.productText}
+                        {product.description.split('\n')[0].slice(0, -1)}
                     </p>
                     <p className="roboto-slab-semibold text-base">
-                        {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.productPrice}`)}
+                        {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.current_price[0]['NGN'][0]}`)}
                     </p>
                 </div>
 
                 <button 
-                className="w-fit bg-dullYellow rounded-full roboto-slab-medium py-0.5 px-10 text-heroPink mt-2 hover:shadow-md active:bg-white"
+                className="w-full transition-all opacity-0 group-hover:opacity-100 bg-dullYellow rounded-full roboto-slab-medium py-2 px-10 text-heroPink mt-2 hover:shadow-md active:bg-white"
                 onClick={() => {
-                    addToCart(product)
+                    addToBasket(product)
                 }}
                 >
-                    Add to Cart
+                    View product
                 </button>
             </div>
         </div>

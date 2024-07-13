@@ -260,3 +260,13 @@ input[type=number] {
     width: 100%;
     text-align: center;
 }
+
+.productImage {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  .yellow, .pkin {
+    width: inherit;
+    height: inherit;
+  }

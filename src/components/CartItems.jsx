@@ -21,7 +21,7 @@ export default function CartItems() {
         return parseInt(acc + currentElement.productQty);
         }, 0);
         setNoOfItems(productCount);
-
+        console.log(cartContent[0])
     }, [cartContent])
 
     useEffect(() => {
@@ -78,11 +78,11 @@ export default function CartItems() {
 
     console.log(pos);
 
-    let data = cartContent.map(product => (
+    let data = cartContent.map((product, index) => (
         <div key={product.id} className="cart-item flex flex-col sm:flex-row justify-center items-center">
                         
             <div className="cart-item-img w-full sm:w-[25%] aspect-square ">
-                <img className="w-full h-full object-center object-cover" src={product.productImage} alt="Radiant Delight" />
+                <img className="w-full h-full object-center object-cover" src={`https://api.timbu.cloud/images/${product.productImage[1].url}`} alt="Radiant Delight" />
             </div>
             <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">
                 <div className="w-full flex flex-row justify-between ">
@@ -95,7 +95,7 @@ export default function CartItems() {
                     </span>
                 </div>
                 
-                <p className="roboto-slab-medium">{product.productText}</p>
+                <p className="roboto-slab-medium">{product.productTag}</p>
                 <div className="counter flex flex-row justify-between w-full">
                     <div className="flex flex-row justify-center items-center w-fit border border-solid border-tradyPink rounded-full">
                         <button 
@@ -127,7 +127,7 @@ export default function CartItems() {
                     </div>
 
                     <p className="roboto-slab-semibold text-base">
-                    {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.productQty * product.productPrice}`)}
+                    {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.productPrice}`)}
                     </p>
                 </div>
                 

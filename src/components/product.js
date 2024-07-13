@@ -15,7 +15,7 @@ import daisyInHeaven from '../../public/images/daisyInHeaven.jpeg';
 
 
 
-let products = [
+export let products = [
     {
         productName: "Ethereal Bloom",
         productText: "For women [Gold]",
@@ -135,4 +135,31 @@ let products = [
     }
 ];
 
-export default products;
+export default products
+
+import React, {useState, useEffect} from "react";
+
+async function fetchProducts() {
+    const request = await fetch('api/products?organization_id=9a805f7be6d245f68c03472d1b1ee477&reverse_sort=false&page=1&size=10&Appid=OMZZNZNC52V1QWF&Apikey=452bd165ec724ba88d42d34a339db37720240712230002233105');
+    const response = await request.json();
+    return response;
+}
+// export default {products, fetchProducts};
+
+export function useProducts() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        let ignore = false;
+
+        fetchProducts().then((response) => {
+            if(!ignore) setProducts(response.data);
+        })
+
+        return () => {
+            ignore = true;
+        }
+    })
+    
+    return products;
+}

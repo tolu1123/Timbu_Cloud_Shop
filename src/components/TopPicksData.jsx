@@ -1,10 +1,16 @@
 import React, {useContext , useEffect} from "react";
 import ReactDOM from "react-dom/client";
 
+import { useNavigate } from "react-router";
+
 import { CartContext } from "./CartContext";
+import { ShoppingContext } from "./ShoppingContext.jsx";
 
 export default function TopPicksData({product}) {
+    let navigate = useNavigate();
+
     const {cartContent, setCartContent} = useContext(CartContext);
+    const {shoppingBasket, setShoppingBasket} = useContext(ShoppingContext);
 
     function addToCart(product) {
         // Check if our cart has been created or not
@@ -70,23 +76,44 @@ export default function TopPicksData({product}) {
         }
     }
 
+    function addToBasket(product) {
+        const basket = {
+            productName: product.name,
+            productTag: product.description.split('\n')[0].slice(0, -1),
+            productText: product.description.split('\n')[1],
+            productImage: product.photos, //An array of images
+            productPrice: product.current_price[0]['NGN'][0],
+            productQty: 1,
+            availableQty: product.available_quantity,
+            id: product.unique_id
+        }
+
+        // // Save to localStorage to persist the data
+        localStorage.setItem('shoppingBasket', JSON.stringify(basket));
+
+        // // Update the shopping basket in the ShoppingContext
+        setShoppingBasket(basket);
+        // Redirect to the product page
+        navigate('/product');
+    }
+
     return (
-        <div key={product.productName} className="flex flex-col items-center text-text-pink justify-center gap-2 roboto-slab-regular">
+        <div key={product.name} className="flex flex-col items-center text-text-pink justify-center gap-2 roboto-slab-regular">
             <div className="img w-[200px] h-[200px] border-4 border-solid border-neutralPink rounded-full overflow-hidden">
-                <img src={product.productImage} className="w-full h-full object-cover object-center" alt="" />
+                <img src={`https://api.timbu.cloud/images/${product.photos[1].url}`} className="w-full h-full object-cover object-center" alt="" />
             </div>
             <div className="text flex flex-col justify-center items-center">
-                <h4 className="text-xl">{product.productName}</h4>
+                <h4 className="text-xl">{product.name}</h4>
                 <p className="text-base">
-                    {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.productPrice}`)}
+                {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.current_price[0]['NGN'][0]}`)}
                 </p>
             </div>
             <button className="bg-dullYellow rounded-full roboto-slab-medium py-1 px-10 hover:shadow-md active:bg-white active:border-text-pink active:border-solid border border-dullYellow"
                 onClick={() => {
-                    addToCart(product)
+                    addToBasket(product)
                 }}
             >
-                Add to Cart
+                View product
             </button>
         </div>
     )

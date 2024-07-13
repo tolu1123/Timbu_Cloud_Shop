@@ -1,14 +1,23 @@
-import React, {useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import ReactDOM from "react-dom/client";
 
 import products from './heroProduct.js'
 
-import {CartContext} from './CartContext.jsx';
 
+import {CartContext} from './CartContext.jsx';
+import { useData } from "./fetchProduct.js";
+
+// function consoler() {
+//     const datum = useData('api/products?organization_id=9a805f7be6d245f68c03472d1b1ee477&reverse_sort=false&page=1&size=10&Appid=OMZZNZNC52V1QWF&Apikey=452bd165ec724ba88d42d34a339db37720240712230002233105');
+//     console.log(datum)
+// }
 
 export default function Hero() {
 
     const { cartContent, setCartContent } = useContext(CartContext);
+
+    // consoler()
+    // console.log(consoler())
 
     function addToCart(product) {
         // Check if our cart has been created or not

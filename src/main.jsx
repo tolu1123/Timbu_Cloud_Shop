@@ -14,6 +14,7 @@ import {
 import Index from './Index.jsx'
 import Cart from './Cart.jsx'
 import CheckOut from './CheckOut.jsx'
+import Product from './Product.jsx'
 
 // Configure the router
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     path: '/checkout',
     element: <CheckOut />,
     errorElement: <Error/>,
+  },{
+    path: '/product',
+    element: <Product />,
+    errorElement: <Error/>
   }
 ])
 

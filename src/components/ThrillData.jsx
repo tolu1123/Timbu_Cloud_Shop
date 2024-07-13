@@ -1,10 +1,15 @@
 import React, {useContext} from "react";
 import ReactDOM from "react-dom/client";
 
+import { useNavigate } from "react-router";
+
 import { CartContext } from "./CartContext";
+import { ShoppingContext } from "./ShoppingContext";
 
 export default function ThrillData({product}) {
+    let navigate = useNavigate();
     const { cartContent, setCartContent } = useContext(CartContext);
+    const {shoppingBasket, setShoppingBasket} = useContext(ShoppingContext);
 
     function addToCart(product) {
         // Check if our cart has been created or not
@@ -69,27 +74,47 @@ export default function ThrillData({product}) {
 
         }
     }
+    function addToBasket(product) {
+        const basket = {
+            productName: product.name,
+            productTag: product.description.split('\n')[0].slice(0, -1),
+            productText: product.description.split('\n')[1],
+            productImage: product.photos, //An array of images
+            productPrice: product.current_price[0]['NGN'][0],
+            productQty: 1,
+            availableQty: product.available_quantity,
+            id: product.unique_id
+        }
+
+        // // Save to localStorage to persist the data
+        localStorage.setItem('shoppingBasket', JSON.stringify(basket));
+
+        // // Update the shopping basket in the ShoppingContext
+        setShoppingBasket(basket);
+        // Redirect to the product page
+        navigate('/product');
+    }
 
     return (
         <div className="gala-1 group w-full aspect-[262/312] text-red-500 rounded-lg relative overflow-hidden">
 
             <div className="gala-img w-full aspect-[262/312] group-hover:w-[120%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[5] transition-all duration-300">
-                <img className="w-full h-full object-center object-cover" src={product.productImage} alt="Whisper of Joy" />
+                <img className="w-full h-full object-center object-cover" src={`https://api.timbu.cloud/images/${product.photos[1].url}`} alt="Whisper of Joy" />
             </div>
 
             <div className="w-full flex flex-col justify-center items-center gap-2 absolute z-[6] bottom-5">
                 <div className="flex flex-col justify-center items-center text-white">
-                    <h4 className="roboto-slab-semibold text-xl">{product.productName}</h4>
+                    <h4 className="opacity-0 transition-all group-hover:opacity-100 roboto-slab-semibold text-xl">{product.name}</h4>
                     <p className="roboto-slab-semibold text-base text-white">
-                        {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(product.productPrice)}
+                    {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(`${product.current_price[0]['NGN'][0]}`)}
                     </p>
                 </div>
-                <button className="w-fit bg-dullYellow rounded-full roboto-slab-medium py-0.5 px-10 text-heroPink hover:shadow-md active:bg-white"
+                <button className="w-fit bg-dullYellow rounded-full roboto-slab-medium py-2 px-10 text-heroPink hover:shadow-md active:bg-white"
                 onClick={() => {
-                    addToCart(product)
+                    addToBasket(product)
                 }}
                 >
-                    Add to Cart
+                    View product
                 </button>
             </div>
         </div>

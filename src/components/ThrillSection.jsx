@@ -22,7 +22,11 @@ export default function ThrillSection() {
         const url = `api/products?organization_id=9a805f7be6d245f68c03472d1b1ee477&reverse_sort=false&page=${currentPage}&size=${productsPerPage}&Appid=OMZZNZNC52V1QWF&Apikey=452bd165ec724ba88d42d34a339db37720240712230002233105`;
 
         let ignore = false;
-        fetch(url)
+        fetch(url, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }})
             .then(response => response.json())
             .then(json => {
             if (!ignore) {

@@ -15,6 +15,9 @@ import Index from './Index.jsx'
 import Cart from './Cart.jsx'
 import CheckOut from './CheckOut.jsx'
 import Product from './Product.jsx'
+import SuccessfulCheckout from './SuccessfulCheckout.jsx'
+
+import {action as submitFormAction} from './components/CheckOutForm.jsx'
 
 // Configure the router
 const router = createBrowserRouter([
@@ -30,10 +33,15 @@ const router = createBrowserRouter([
   {
     path: '/checkout',
     element: <CheckOut />,
+    action: submitFormAction,
     errorElement: <Error/>,
   },{
     path: '/product',
     element: <Product />,
+    errorElement: <Error/>
+  },{
+    path: '/successfulCheckout',
+    element: <SuccessfulCheckout />,
     errorElement: <Error/>
   }
 ])

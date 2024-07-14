@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 export default function Footer() {
     return (
-        <footer className="grid grid-cols-1 grid-rows-5 md:grid-cols-2 md:grid-rows-4 bg-glassyBlack px-5 py-14 !sm:py-6 text-white">
+        <footer className="grid grid-cols-1 grid-rows-5 md:grid-cols-2 md:grid-rows-4 bg-glassyBlack px-5 py-14 !sm:py-6 text-white lg:gap-x-6 lg:px-24">
 
             <div className="footer-logo md:col-start-1 md:col-end-2 row-start-3 row-end-4 md:row-start-1 md:row-end-2 pt-6">
                 <a href="" className="logo relative -translate-x-1/2 left-1/2 inline-flex flex-col items-center md:justify-start justify-center w-fit just-another-hand md:left-0 md:translate-x-0">

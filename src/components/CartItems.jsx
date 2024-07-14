@@ -13,6 +13,7 @@ export default function CartItems() {
     const [pos, setPos] = useState(cartContent.reduce((accumulator, currentElement) => {
         return accumulator + (currentElement.qty * currentElement.rPrice);
     }, 0));
+
     const [noOfItems, setNoOfItems] = useState(0)
 
     useEffect(() => {
@@ -21,7 +22,6 @@ export default function CartItems() {
         return parseInt(acc + currentElement.productQty);
         }, 0);
         setNoOfItems(productCount);
-        console.log(cartContent[0])
     }, [cartContent])
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export default function CartItems() {
     
     const navigate = useNavigate();
    
-    // Example of updating cartContent and saving to local storage:
+    // Updating cartContent and saving to local storage:
     function updateCartContent(updatedCartContent) {
         setCartContent(updatedCartContent); // Update state
         localStorage.setItem('cart', JSON.stringify(updatedCartContent)); // Save to local storage

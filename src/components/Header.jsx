@@ -25,23 +25,6 @@ export default function Header(props) {
 
   console.log(cartContent, cartEmpty, noOfItems)
 
-
-  // useEffect(() => {
-  //   // Define a named function for the event listener
-  //   const handleStorageChange = () => {
-  //     console.log('actived storage change')
-  //     // setCart(JSON.parse(localStorage.getItem('cart')));
-  //   };
-  
-  //   // Add event listener to listen for the changes in localStorage
-  //   window.addEventListener('storage', handleStorageChange);
-  
-  //   // Return a cleanup function that removes the event listener
-  //   return () => {
-  //     window.removeEventListener('storage', handleStorageChange);
-  //   };
-  // }, []);
-
   const navigate = useNavigate();
 
   const textColor = props.textColor;
@@ -71,7 +54,7 @@ export default function Header(props) {
   }, [dropDown]);
 
   return (
-    <header className={`w-full flex flex-row justify-center items-center absolute ${textColor} px-5 py-8`}>
+    <header className={`w-full flex flex-row justify-center items-center absolute ${textColor} px-5 py-8 lg:px-24`}>
       {/* Nav for mobile */}
       <nav className={`w-full ${textColor} flex items-center lg:hidden`}>
         {/* The nav for mobile view  */}

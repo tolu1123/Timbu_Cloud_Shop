@@ -6,19 +6,14 @@ import products from './heroProduct.js'
 
 import {CartContext} from './CartContext.jsx';
 import { useData } from "./fetchProduct.js";
+import BannerProduct from './BannerProduct.jsx'
 
-// function consoler() {
-//     const datum = useData('api/products?organization_id=9a805f7be6d245f68c03472d1b1ee477&reverse_sort=false&page=1&size=10&Appid=OMZZNZNC52V1QWF&Apikey=452bd165ec724ba88d42d34a339db37720240712230002233105');
-//     console.log(datum)
-// }
+
 
 export default function Hero() {
 
     const { cartContent, setCartContent } = useContext(CartContext);
-
-    // consoler()
-    // console.log(consoler())
-
+    
     function addToCart(product) {
         // Check if our cart has been created or not
         if (localStorage.getItem('cart') === null) {
@@ -83,23 +78,23 @@ export default function Hero() {
         }
     }
 
-    const data = products.map(product => (
-        <div className="hero-product flex flex-col sm:flex-row justify-between">
-                <div className="w-full sm:w-80 sm:aspect-square sm:relative">
-                    <img src={product.productImage} alt="hero-product" className=" h-full object-cover sm:object-top" />
-                </div>
+    // const data = 
+    //     <div className="hero-product flex flex-col sm:flex-row justify-between">
+    //             <div className="w-full sm:w-80 sm:aspect-square sm:relative">
+    //                 <img src={`https://api.timbu.cloud/images/${perfume[0].photos[1].url}`} alt="hero-product" className=" h-full object-cover sm:object-top" />
+    //             </div>
 
-                <div className="flex flex-col justify-center items-center relative -translate-y-[70px] sm:static sm:-translate-y-[0]">
-                    <button className="bg-dullYellow inline-block h-fit text-heroPink text-xl py-3 px-10 roboto-slab-medium rounded-full hover:shadow-md active:bg-white"
-                        onClick={() => {
-                            addToCart(product)
-                        }}
-                    >Add to Cart
-                    </button>
-                </div>
+    //             <div className="flex flex-col justify-center items-center relative -translate-y-[70px] sm:static sm:-translate-y-[0]">
+    //                 <button className="bg-dullYellow inline-block h-fit text-heroPink text-xl py-3 px-10 roboto-slab-medium rounded-full hover:shadow-md active:bg-white"
+    //                     onClick={() => {
+    //                         addToCart(product)
+    //                     }}
+    //                 >Add to Cart
+    //                 </button>
+    //             </div>
                 
-        </div>
-    ))
+    //     </div>
+    // console.log(data);
 
     return (
         <div className="hero w-full items-center sm:items-start pt-[164px] flex flex-row justify-center flex-wrap">
@@ -122,7 +117,7 @@ export default function Hero() {
                 
             </div>
             {/* The hero product */}
-            {data}
+            <BannerProduct />
         </div>
     )
 }

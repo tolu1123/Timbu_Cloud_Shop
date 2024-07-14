@@ -123,7 +123,7 @@ export default function ShopNowProducts(props) {
     }
 
     return (
-        <div key={product.productName} className="group w-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:z-[6] sm:hover:-translate-y-7">          
+        <div key={product.productName} className="group w-full h-full product-card border border-solid border-bleetYellow shadow-none  hover:shadow-xl hover:shadow-[#ccc] transition-all duration-300 sm:hover:z-[6] sm:hover:-translate-y-7">          
             <div className="product-img w-full aspect-[386/365] ">
             
                 <img className="w-full h-full object-center object-cover" src={`https://api.timbu.cloud/images/${product.photos[1].url}`} alt="Ethereal Bloom" />

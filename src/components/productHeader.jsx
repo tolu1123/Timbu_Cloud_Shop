@@ -2,10 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import { useNavigate } from 'react-router'
+import {CartContext} from './CartContext.jsx'
+
 
 
 export default function ProductHeader() {
-    const navigate = useNavigate();
+    const navigate = useNavigate();    
 
     return (
         <header className='flex flex-row justify-between items-center shadow-md text-tradyPink px-5 py-8 w-full fixed top-0 bg-white z-50'>

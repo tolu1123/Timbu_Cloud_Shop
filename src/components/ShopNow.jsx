@@ -103,7 +103,7 @@ export default function ShopNow() {
             </div>
 
             {/* Div for the product cards */}
-            <div className="products flex flex-col items-center justify-center gap-6 sm:grid sm:grid-cols-3 sm:gap-6 lg:grid-cols-4 lg:gap-12">
+            <div className="products flex flex-col items-center justify-center gap-6 sm:grid sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-9">
                 {data}
 
     

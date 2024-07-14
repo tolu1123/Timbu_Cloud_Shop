@@ -20,14 +20,6 @@ export default function Product() {
 
   const navigate = useNavigate();
 
-  if (
-    shoppingBasket === null ||
-    shoppingBasket.productName === "" ||
-    !shoppingBasket
-  ) {
-    //Navigate to the home page if the shopping basket is empty
-    navigate("/");
-  }
 
   return (
     <>

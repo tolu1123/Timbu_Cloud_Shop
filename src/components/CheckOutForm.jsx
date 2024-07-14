@@ -4,6 +4,31 @@ import ReactDOM from "react-dom/client";
 import visa from '../../public/images/visa-logo.png';
 import mastercard from '../../public/images/mastercard-logo.png';
 
+import {
+    Form,
+    redirect,
+} from "react-router-dom";
+  
+export async function action({ request, params }) {
+    const formData = await request.formData();
+    const updates = Object.fromEntries(formData);
+
+    const email = updates.email;
+    const region = updates.region;
+    const firstName = updates.firstName;
+    const lastName = updates.lastName;
+    const address = updates.address;
+
+    const cardNumber = updates.cardNumber;
+    const expirationDate = updates.expirationDate;
+    const securityCode = updates.securityCode;
+    const cardHolderName = updates.cardHolderName;
+    const transferType = updates.transferType;
+
+    if(email && region && firstName && lastName && address && cardNumber && expirationDate && securityCode && cardHolderName && transferType) {
+        return redirect("/successfulCheckout");
+    }
+}
 
 export default function CheckOutForm() {
 
@@ -18,14 +43,62 @@ export default function CheckOutForm() {
     const [expirationDate, setExpirationDate] = useState('');
     const [securityCode, setSecurityCode] = useState('');
     const [cardHolderName, setCardHolderName] = useState('');
-    const [paypal, setPaypal] = useState(false);
-    const [bankTransfer, setBankTransfer] = useState(false);
+    const [transferType, setTransferType] = useState('');
+
     const [rememberMe, setRememberMe] = useState(false);
+
+    const [requiredFields, setRequiredFields] = useState(false);
+    const [clickedOnce, setClickedOnce] = useState(false);
+
+    useEffect(() => {
+        //Check if the user has saved their information
+        if(localStorage.getItem('rememberMe') === 'true'){
+            setEmail(localStorage.getItem('email'));
+            setRegion(localStorage.getItem('region'));
+            setFirstName(localStorage.getItem('firstName'));
+            setLastName(localStorage.getItem('lastName'));
+            setAddress(localStorage.getItem('address'));
+            setCompany(localStorage.getItem('company'));
+            setPhone(localStorage.getItem('phone'));
+        }
+    }, [])
+
+    useEffect(() => {
+        // if rememmber me is checked, save the user's information
+        if(rememberMe) {
+            localStorage.setItem('email', email);
+            localStorage.setItem('region', region);
+            localStorage.setItem('firstName', firstName);
+            localStorage.setItem('lastName', lastName);
+            localStorage.setItem('address', address);
+            localStorage.setItem('company', company);
+            localStorage.setItem('phone', phone);
+            localStorage.setItem('rememberMe', rememberMe);
+        } else {
+            localStorage.removeItem('email');
+            localStorage.removeItem('region');
+            localStorage.removeItem('firstName');
+            localStorage.removeItem('lastName');
+            localStorage.removeItem('address');
+            localStorage.removeItem('company');
+            localStorage.removeItem('phone');
+            localStorage.removeItem('rememberMe');
+        }
+    }, [rememberMe])
+
+    useEffect(() => {
+        if(email && region && firstName && lastName && address && cardNumber && expirationDate && securityCode && cardHolderName && transferType) {
+            setRequiredFields(true);
+        } else {
+            setRequiredFields(false);
+        }
+    }, [email, region, firstName, lastName, address, cardNumber, expirationDate, securityCode, cardHolderName, transferType])
+
 
 
     return (
         <div className="p-5">
-            <form action="" autoComplete="off">
+            <Form method='post' autoComplete="off">
                 
                 {/* The contact */}
                 <div className="contact poppins-medium">
@@ -93,7 +166,7 @@ export default function CheckOutForm() {
                             />
 
                             <label 
-                            htmlFor="region"
+                            htmlFor="firstName"
                             className='text-sm poppins-regular peer-focus:-top-0.5 px-0.5 text-offWhite peer-focus:text-livelyPink peer-valid:-top-1 absolute left-3 top-1/2 -translate-y-1/2 transition-all duration-100 ease-linear bg-white'>
                                 First Name
                             </label>
@@ -145,7 +218,7 @@ export default function CheckOutForm() {
                             type="text"
                             name="company" 
                             id="company"
-                            required
+                            
                             value={company}
                             onChange={(e) => {
                                 setCompany(e.target.value)
@@ -165,7 +238,7 @@ export default function CheckOutForm() {
                             type="text"
                             name="phone" 
                             id="phone"
-                            required
+                            
                             value={phone}
                             onChange={(e) => {
                                 setPhone(e.target.value)
@@ -259,7 +332,7 @@ export default function CheckOutForm() {
                             />
 
                             <label 
-                            htmlFor="lastName"
+                            htmlFor="securityCode"
                             className='text-sm poppins-regular peer-focus:-top-0.5 px-0.5 text-offWhite peer-focus:text-livelyPink peer-valid:-top-1 absolute left-3 top-1/2 -translate-y-1/2 transition-all duration-100 ease-linear bg-white'>
                                 Security code
                             </label>
@@ -286,7 +359,7 @@ export default function CheckOutForm() {
                         />
 
                         <label 
-                        htmlFor="email"
+                        htmlFor="cardHolderName"
                         className='text-sm poppins-regular peer-focus:-top-0.5 px-0.5 text-offWhite peer-focus:text-livelyPink peer-valid:-top-1 absolute left-3 top-1/2 -translate-y-1/2 transition-all duration-100 ease-linear bg-white'>
                             Name on card
                         </label>
@@ -296,18 +369,15 @@ export default function CheckOutForm() {
                         <div className="flex flex-row gap-3">
                             <input 
                                 type="radio"
-                                name="paypal" 
+                                name="transferType" 
                                 id="paypal"
                                 required
                                 autoFocus={true}
-                                value={paypal}
+                                value={'paypal'}
                                 onChange={(e) => {
-                                    setPaypal(e.target.checked)
-                                    if(bankTransfer) {
-                                        setBankTransfer(false);
-                                    
-                                    }
+                                    setTransferType(e.target.value)
                                 }}
+                                checked={transferType === 'paypal'}
                                 className='w-[20px] peer h-[20px] border border-solid px-3 border-offBlack outline-0 rounded-full accent-livelyPink focus:border-livelyPink caret-livelyPink'
                             />
 
@@ -319,17 +389,15 @@ export default function CheckOutForm() {
                         <div className="flex flex-row gap-3">
                             <input 
                                 type="radio"
-                                name="bankTransfer" 
+                                name="transferType" 
                                 id="bankTransfer"
                                 required
                                 autoFocus={true}
-                                value={bankTransfer}
+                                value={'bankTransfer'}
                                 onChange={(e) => {
-                                    setBankTransfer(e.target.checked)
-                                    if(paypal) {
-                                        setPaypal(false);
-                                    }
+                                    setTransferType(e.target.value)
                                 }}
+                                checked={transferType === 'bankTransfer'}
                                 className='peer w-[20px] h-[20px] border border-solid px-3 border-offBlack outline-0 rounded-full accent-livelyPink focus:border-livelyPink caret-livelyPink'
                             />
 
@@ -349,7 +417,7 @@ export default function CheckOutForm() {
                                 type="checkbox"
                                 name="rememberMe" 
                                 id="rememberMe"
-                                required
+                                
                                 autoFocus={true}
                                 value={rememberMe}
                                 onChange={(e) => {
@@ -367,10 +435,23 @@ export default function CheckOutForm() {
 
                 </div>
 
-                <button className="w-full p-3 transitions-all duration-300 bg-tradyPink hover:bg-white border border-solid border-tradyPink text-[#fff] font-semibold rounded-md poppins-semibold text-lg mt-10 hover:text-livelyPink">
+                {clickedOnce && requiredFields && <div className="text-red-500 text-lg text-center mt-10 poppins-medium">
+                    Please fill in the required fields
+                </div>}
+
+                <button 
+                className="w-full p-3 transitions-all duration-300 bg-tradyPink hover:bg-white border border-solid border-tradyPink text-[#fff] font-semibold rounded-md poppins-semibold text-lg mt-5 hover:text-livelyPink"
+                onClick={() => {
+                    setClickedOnce(state => {
+                        if(!state) {
+                            return true;
+                        }
+                    });
+                }}
+                >
                     Pay Now
                 </button>
-            </form>
+            </Form>
         </div>
     )
 }

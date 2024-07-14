@@ -55,7 +55,7 @@ export default function ThrillSection() {
                 </p>
             </div>
 
-            <div className="w-full thrill-gallery flex flex-col gap-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-6 sm:px-20 lg:px-0">
+            <div className="w-full thrill-gallery flex flex-col gap-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-6 px-6 sm:px-20 lg:px-0">
                 {data}
             </div>
         </div>

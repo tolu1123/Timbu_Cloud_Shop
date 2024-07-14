@@ -171,7 +171,7 @@ export default function ProductHero() {
                 {/* image of the item */}
                 <div className="w-full flex flex-col items-center lg:items-end">
                     <div
-                        className="flex flex-row flex-nowrap overflow-x-auto w-[280px] md:w-[350px] lg:w-[410px] aspect-square text-sm rounded-[10px] shadow-lg shadow-black"
+                        className="flex flex-row flex-nowrap overflow-x-auto w-[280px] md:w-[350px] lg:w-[410px] aspect-square text-sm rounded-[10px] shadow-md shadow-[#acacac]"
                     >
                         <img
                         className="productImage block w-full h-full object-cover object-center transition-all"

@@ -56,7 +56,7 @@ export default function Header(props) {
   return (
     <header className={`w-full flex flex-row justify-center items-center absolute ${textColor} px-5 py-8 lg:px-24`}>
       {/* Nav for mobile */}
-      <nav className={`w-full ${textColor} flex items-center lg:hidden`}>
+      <nav className={`w-full ${textColor} grid grid-cols-3 justify-between items-center lg:hidden`}>
         {/* The nav for mobile view  */}
         {/* <div class="w-full nav-sm flex flex-row justify-between items-center"> */}
         <span
@@ -76,7 +76,7 @@ export default function Header(props) {
 
         <a
           href=""
-          className="logo relative -translate-x-1/2 left-1/2 inline-flex flex-col items-center justify-center w-fit just-another-hand"
+          className="logo inline-flex flex-col items-center justify-center w-fit just-another-hand"
         >
           {/* <h1 className='text-center w-fit inline-flex flex-col justify-center items-center'> */}
           <span className="inline m-0 text-[60px] leading-[60px]">Cloud 9</span>

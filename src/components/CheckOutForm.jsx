@@ -115,7 +115,7 @@ export default function CheckOutForm() {
                             onChange={(e) => {
                                 setEmail(e.target.value)
                             }}
-                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                         />
 
                         <label 
@@ -140,7 +140,7 @@ export default function CheckOutForm() {
                             onChange={(e) => {
                                 setRegion(e.target.value)
                             }}
-                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                         />
 
                         <label 
@@ -162,7 +162,7 @@ export default function CheckOutForm() {
                                 onChange={(e) => {
                                     setFirstName(e.target.value)
                                 }}
-                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                             />
 
                             <label 
@@ -182,7 +182,7 @@ export default function CheckOutForm() {
                                 onChange={(e) => {
                                     setLastName(e.target.value)
                                 }}
-                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                             />
 
                             <label 
@@ -203,7 +203,7 @@ export default function CheckOutForm() {
                             onChange={(e) => {
                                 setAddress(e.target.value)
                             }}
-                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                         />
 
                         <label 
@@ -223,7 +223,7 @@ export default function CheckOutForm() {
                             onChange={(e) => {
                                 setCompany(e.target.value)
                             }}
-                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                         />
 
                         <label 
@@ -243,7 +243,7 @@ export default function CheckOutForm() {
                             onChange={(e) => {
                                 setPhone(e.target.value)
                             }}
-                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                         />
 
                         <label 
@@ -281,7 +281,7 @@ export default function CheckOutForm() {
                             onChange={(e) => {
                                 setCardNumber(e.target.value)
                             }}
-                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                         />
 
                         <label 
@@ -308,7 +308,7 @@ export default function CheckOutForm() {
                                 onChange={(e) => {
                                     setExpirationDate(e.target.value)
                                 }}
-                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                             />
 
                             <label 
@@ -328,7 +328,7 @@ export default function CheckOutForm() {
                                 onChange={(e) => {
                                     setSecurityCode(e.target.value)
                                 }}
-                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                                className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                             />
 
                             <label 
@@ -355,7 +355,7 @@ export default function CheckOutForm() {
                             onChange={(e) => {
                                 setCardHolderName(e.target.value)
                             }}
-                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink'
+                            className='w-full peer h-[40px] border border-solid px-3 border-offWhite outline-0 rounded-lg focus:border-livelyPink caret-livelyPink poppins-regular'
                         />
 
                         <label 

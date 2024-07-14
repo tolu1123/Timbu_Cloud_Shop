@@ -34,13 +34,13 @@ export default function SuccessfulCheckout() {
 
     return (
 
-        <div className="w-dvh h-dvh flex flex-col items-center justify-center">
+        <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center">
 
             <div className="text-[280px] text-tradyPink">
                 <i className="fa-sharp fa-regular fa-badge-check"></i>
             </div>
-            <div className="">
-                <p className="tradyPink text-xl">
+            <div className="flex flex-col items-center justify-center">
+                <p className="tradyPink text-center text-xl">
                     Your Order has been successfully placed.
                 </p>
                 <div 

@@ -1,9 +1,5 @@
 {
     "rewrites": [
-        { "source": "/(.*)", "destination": "/" },
-        {
-            "source": "/api/:path*",
-            "destination": "https://api.timbu.cloud/:path*"
-          }
+        { "source": "/(.*)", "destination": "/" }
     ]
 }

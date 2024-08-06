@@ -928,6 +928,10 @@ video {
   width: 100%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1873,10 +1877,6 @@ input[type=number] {
 }
 
 @media (max-width: 639px) {
-  :root {
-    scrollbar-width: 0;
-    scroll-behavior: smooth;
-  }
   .transTop {
     transform: translateY(-2000%);
     opacity: 0;

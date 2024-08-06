@@ -18,6 +18,10 @@ export default function CheckOutProducts() {
     }, 0))
   }, [cartContent])
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
+
   function deleteProduct(productToDelete) {
     const updatedCartContent = cartContent.filter((product) => product.productName !== productToDelete.productName);
     console.log(updatedCartContent);
@@ -34,7 +38,7 @@ export default function CheckOutProducts() {
   let data = cartContent.map((product, index) => (
     <div key={product.id} className="cart-item flex flex-col sm:flex-row justify-center items-center mt-6">
                     
-        <div className="cart-item-img w-full sm:w-[25%] aspect-square ">
+        <div className="cart-item-img w-1/2 sm:w-[25%] aspect-square ">
             <img className="w-full h-full object-center object-cover" src={`/perfumeImages/${product.productImage[1]}`} alt={`${product.productTag}`} />
         </div>
         <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">

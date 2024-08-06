@@ -40,7 +40,8 @@ export default function ProductHero() {
     ))
 
     useEffect(() => {
-        console.log(shoppingBasket, 'this is the shopping basket');
+        // Effect to scroll back to the top
+        window.scrollTo(0, 0);
     }, [shoppingBasket])
 
 

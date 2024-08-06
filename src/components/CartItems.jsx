@@ -80,7 +80,7 @@ export default function CartItems() {
     let data = cartContent.map((product, index) => (
         <div key={product.id} className="cart-item flex flex-col sm:flex-row justify-center items-center">
                         
-            <div className="cart-item-img w-full sm:w-[25%] aspect-square ">
+            <div className="cart-item-img w-1/2 sm:w-[25%] aspect-square ">
                 <img className="w-full h-full object-center object-cover" src={`/perfumeImages/${product.productImage[1]}`} alt="Radiant Delight" />
             </div>
             <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">

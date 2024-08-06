@@ -9,51 +9,25 @@ export default function BannerProduct() {
     const {shoppingBasket, setShoppingBasket} = useContext(ShoppingContext);
 
     const product = {
+        id: "PROD015",
         name: "Radiant Moon",
-        productTag: "Luminous Night",
-        description: 'Illuminate your evenings with Radiant Moon, a fragrance that captures the mysterious and enchanting beauty of the night. This captivating scent blends shimmering floral notes with warm, sensual undertones, creating an aura of elegance and allure. Radiant Moon is perfect for those who seek to embrace the magic of the night and radiate confidence and sophistication.',
-        productImage: [
-            {
-                model_name: "products",
-                model_id: "7b31023efc49483194bd1efe4cf18860",
-                organization_id: "9a805f7be6d245f68c03472d1b1ee477",
-                filename: "4b3cc954520044d284ad5928b46a08c9.jpg",
-                url: "cloud9/product_radiant_moon_a865e8_1.jpg",
-                is_featured: false,
-                save_as_jpg: true,
-                is_public: true,
-                file_rename: false,
-                position: 1
-            },
-            {
-                model_name: "products",
-                model_id: "7b31023efc49483194bd1efe4cf18860",
-                organization_id: "9a805f7be6d245f68c03472d1b1ee477",
-                filename: "1f9df31561224f758bbc985d2fff06a4.jpg",
-                url: "cloud9/product_radiant_moon_542d28_2.jpg",
-                is_featured: false,
-                save_as_jpg: true,
-                is_public: true,
-                file_rename: false,
-                position: 2
-            }
-        ],
-        productPrice: 14500,
-        productQty: 1,
-        availableQty: 10,
-        id: 'PROD015'
-
+        tag: "Luminous Night Elegance",
+        text: "Illuminate your evenings with Radiant Moon, a fragrance that captures the mysterious and enchanting beauty of the night. This captivating scent blends shimmering floral notes with warm, sensual undertones, creating an aura of elegance and allure. Radiant Moon is perfect for those who seek to embrace the magic of the night and radiate confidence and sophistication.",
+        photos: ["radiantMoon.png", "radiantMoon.png"],
+        price: 14500,
+        qty: 0,
+        availableQty: 10
     }
 
     // Writing the add to shopping basket function
     function addToBasket(product) {
         const basket = {
             productName: product.name,
-            productTag: product.productTag,
-            productText: product.description,
-            productImage: product.productImage, //An array of images
-            productPrice: product.productPrice,
-            productQty: product.productQty,
+            productTag: product.tag,
+            productText: product.text,
+            productImage: product.photos, //An array of images
+            productPrice: product.price,
+            productQty: 1,
             availableQty: product.availableQty,
             id: product.id
         }
@@ -70,7 +44,7 @@ export default function BannerProduct() {
     return(
         <div className="hero-product flex flex-col sm:flex-row justify-between">
                 <div className="w-full sm:w-80 sm:aspect-square sm:relative">
-                    <img src={`https://api.timbu.cloud/images/${product.productImage[0].url}`} alt="hero-product" className=" h-full object-cover sm:object-top" />
+                    <img src={`/perfumeImages/${product.photos[0]}`} alt="hero-product" className=" h-full object-cover sm:object-top" />
                 </div>
 
                 <div className="flex flex-col justify-center items-center relative -translate-y-[70px] sm:static sm:-translate-y-[0]">

@@ -1,10 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import ReactDOM from "react-dom/client";
 
-import whisperOfJoy from '../../public/images/whisper-of-joy.jpeg';
-import elysianEssence from '../../public/images/elysian-essence.jpeg';
-import sublimeSerenity from '../../public/images/sublime-serenity.jpeg';
-import divinePleasure from '../../public/images/divine-pleasure.jpeg';
 
 import { CartContext } from "./CartContext";
 import ThrillData from "./ThrillData";
@@ -17,17 +13,18 @@ export default function ThrillSection() {
     const [productsPerPage, setProductsPerPage] = useState(4);
     const [perfumes, setPerfumes] = useState([])
     const selectedProducts = product.slice(4, 8);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=9a805f7be6d245f68c03472d1b1ee477&reverse_sort=false&page=${currentPage}&size=${productsPerPage}&Appid=OMZZNZNC52V1QWF&Apikey=452bd165ec724ba88d42d34a339db37720240712230002233105`;
+        const url = `/data/perfumes.json`;
 
-        let ignore = false;
-        fetch(url)
+        fetch(url, {
+            cache: 'no-cache',
+        })
             .then(response => response.json())
             .then(json => {
-            if (!ignore) {
-                setPerfumes(json.items);
-            }
+                let data = json.slice(8, 12)
+                setPerfumes(data);
             })
             .catch(error => {
                 // throw new Error()
@@ -37,13 +34,13 @@ export default function ThrillSection() {
             
         
         return () => {
-            ignore = true;
+            setIsLoading(true);
         }
         
-    }, [currentPage, productsPerPage]);
+    }, []);
 
-    const data = perfumes.map((product) => (
-        <ThrillData key={product.id} product={product} />
+    const data = perfumes.map((product, index) => (
+        <ThrillData key={product.id} product={product} updateIsLoading={(state) => setIsLoading(state)} index={index} isLoading={isLoading} />
     ))
 
     return (

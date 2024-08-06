@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import ReactDOM from "react-dom/client";
 
-import RadiantDelight from "../../public/images/radiant-delight.jpeg";
 
 import { CartContext } from './CartContext.jsx';
 
@@ -36,7 +35,7 @@ export default function CheckOutProducts() {
     <div key={product.id} className="cart-item flex flex-col sm:flex-row justify-center items-center mt-6">
                     
         <div className="cart-item-img w-full sm:w-[25%] aspect-square ">
-            <img className="w-full h-full object-center object-cover" src={`https://api.timbu.cloud/images/${product.productImage[1].url}`} alt="Radiant Delight" />
+            <img className="w-full h-full object-center object-cover" src={`/perfumeImages/${product.productImage[1]}`} alt={`${product.productTag}`} />
         </div>
         <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">
             <div className="w-full flex flex-row justify-between ">

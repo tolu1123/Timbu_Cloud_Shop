@@ -1,42 +1,44 @@
 import React, {useState,useEffect, useContext} from "react";
 import ReactDom from 'react-dom/client';
 
-import blissfulWand from '../../public/images/blissful-wand.jpeg';
-import delightDuet from '../../public/images/delight-duet.jpeg';
-import euphoriaElixir from '../../public/images/euphoria-elixir.jpeg';
-import passionPod from '../../public/images/passion-pod.jpeg';
+// Importing styles
+import '../styles/Toppicks.css';
 
-import TopPicksData from "./TopPicksData";
-import products from "./product.js";
+// Importing the TopPicksData component
+import TopPicksData from './TopPicksData';
+
 
 export default function Toppicks() {
 
-    const [currentPage, setCurrentPage] = useState(2);
-    const [productsPerPage, setProductsPerPage] = useState(4);
     const [perfumes, setPerfumes] = useState([])
 
-    useEffect(() => {
-        const url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=9a805f7be6d245f68c03472d1b1ee477&reverse_sort=false&page=${currentPage}&size=${productsPerPage}&Appid=OMZZNZNC52V1QWF&Apikey=452bd165ec724ba88d42d34a339db37720240712230002233105`;
+    const [isLoading, setIsLoading] = useState(true);
 
-        let ignore = false;
-        fetch(url)
+    useEffect(() => {
+        const url = `/data/perfumes.json`;
+
+        fetch(url, {
+            cache: 'no-cache',
+        })
             .then(response => response.json())
             .then(json => {
-            if (!ignore) {
-                setPerfumes(json.items);
-            }
+                let data = json.slice(4, 8)
+                setPerfumes(data);
+
             })
             .catch(error => console.log(error));
             
         
         return () => {
-            ignore = true;
+            setIsLoading(true);
         }
         
-    }, [currentPage, productsPerPage]);
+    }, []);
 
-    const data = perfumes.map((product) => (
-        <TopPicksData key={product.id} product={product} />
+
+    
+    const data = perfumes.map((product, index) => (
+        <TopPicksData key={product.id} isLoading={isLoading} updateIsLoading={(state) => setIsLoading(state)} product={product} index={index} />
     ))
 
     return (

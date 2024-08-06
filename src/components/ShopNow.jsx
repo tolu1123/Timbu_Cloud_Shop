@@ -1,15 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 
-import etherealBloom from '../../public/images/ethereal-bloom.jpeg';
-import noirEclipse from '../../public/images/noir-eclipse.jpeg';
-import amberSerenity from '../../public/images/amber-serenity.jpeg';
-import RadiantDelight from '../../public/images/radiant-delight.jpeg';
 
-
-import products from './product.js';
 import ShopNowProducts from './shopNowProducts.jsx';
-import { useData } from './fetchProduct.js';
 
 export default function ShopNow() {
 
@@ -17,36 +10,48 @@ export default function ShopNow() {
     const [perfumes, setPerfumes] = useState([])
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage, setProductsPerPage] = useState(4);
-    useEffect(() => {
-        const url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=9a805f7be6d245f68c03472d1b1ee477&reverse_sort=false&page=${currentPage}&size=${productsPerPage}&Appid=OMZZNZNC52V1QWF&Apikey=452bd165ec724ba88d42d34a339db37720240712230002233105`;
 
-        let ignore = false;
-        fetch(url)
-            .then(response => response.json())
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const url = `/data/perfumes.json`;
+
+        fetch(url, {
+            cache: 'no-cache',
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('An error occured');
+                }
+               return response.json()
+            })
             .then(json => {
-            if (!ignore) {
-                setNoOfPerfumes(json.total);
-                setPerfumes(json.items);
-            }
+                setNoOfPerfumes(json.length);
+                setPerfumes(json);
+                
             })
             .catch(error => {
                 // throw new Error()
                 console.log(error);
-
             })
             
         
         return () => {
-            ignore = true;
+            setIsLoading(true);
         }
         
     }, [currentPage, productsPerPage]);
     
     const totalPageNo = Math.ceil(noOfPerfumes / productsPerPage);
 
+    console.log(totalPageNo);
+
     function updatePage(pageNo) {
+        // Set the isLoading state back to true
+        setIsLoading(true);
         // This sets the current page to the page number clicked
         setCurrentPage(pageNo);
+        
     }
     function prevPage() {
         if(currentPage > 1) {
@@ -80,16 +85,23 @@ export default function ShopNow() {
         <i class="fa-regular fa-chevron-left"></i>
     </button>
     let nextBtn = <button
-    className={`px-4 py-2 mx-1 border border-solid rounded ${currentPage + 1 === totalPageNo ? 'bg-dullPink text-white' : 'bg-white text-dullPink border-dullPink'}`}
+    className={`px-4 py-2 mx-1 border border-solid rounded ${currentPage !== totalPageNo ? 'bg-dullPink text-white' : 'bg-white text-dullPink border-dullPink'}`}
     onClick={() => nextPage()}
     >
         <i class="fa-regular fa-chevron-right"></i>
     </button>
 
 
-
-    let data = perfumes.map(product => (
-                <ShopNowProducts key={product.unique_id} product={product}/>
+    const startIndex = (currentPage - 1) * 4;
+    const endIndex = startIndex + 4;
+    let requiredData;
+    if(endIndex >= noOfPerfumes) {
+        requiredData = perfumes.slice(startIndex);
+    }else {
+        requiredData = perfumes.slice(startIndex, endIndex);
+    }
+    let data = requiredData.map((product, index) => (
+                <ShopNowProducts key={product.unique_id} product={product} index={index} isLoading={isLoading} updateIsLoading={(state) => setIsLoading(state)}/>
             )
         )
 

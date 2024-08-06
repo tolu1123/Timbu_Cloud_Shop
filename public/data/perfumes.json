@@ -1,0 +1,161 @@
+[{
+    "id": "PROD001",
+    "name": "Dolce & Gabbana",
+    "tag": "Italian Luxury Redefined",
+    "text": "This exquisite fragrance captures the essence of the Mediterranean lifestyle, combining the sparkling zest of Sicilian lemon with the fresh, floral notes of jasmine and the crispness of cedarwood. Perfect for both men and women, this scent embodies the spirit of carefree summer days and the allure of sun-drenched beaches.",
+    "photos": ["dolceGabana.jpeg", "dolceGabana2.jpg"],
+    "price": 9000,
+    "qty": 0,
+    "availableQty": 13 
+},
+{
+    "id": "PROD002",
+    "name": "Aqua Allegoria",
+    "tag": "Nature's Fresh Harmony",
+    "text": "Experience the essence of nature with Aqua Allegoria by Guerlain, a captivating fragrance that celebrates the beauty of fresh, natural ingredients. Each scent in the Aqua Allegoria collection is inspired by gardens around the world, blending pure and radiant notes to create a harmonious, uplifting experience. With its delicate balance of citrus, floral, and herbal aromas, Aqua Allegoria is perfect for those who love fresh and vibrant scents that evoke the spirit of nature.",
+    "photos": ["aquaAlegoria.jpeg", "aquaAlegoria2.jpeg"],
+    "price": 13000,
+    "qty": 0,
+    "availableQty": 9
+},
+{
+    "id": "PROD003",
+    "name": "N 5 CHANEL",
+    "tag": "Iconic Timelessness",
+    "text": "Immerse yourself in timeless elegance with N°5 CHANEL Eau de Parfum, the iconic fragrance that has captivated the world since its creation in 1921. Created by Gabrielle 'Coco' Chanel, this legendary scent is renowned for its sophisticated and luxurious blend of floral and aldehydic notes. N°5 is the epitome of femininity and grace, a classic fragrance that continues to be a symbol of refinement and style.",
+    "photos": ["N-5-CHANEL.jpeg", "N-5-CHANEL2.jpeg"],
+    "price": 5600,
+    "qty": 0,
+    "availableQty": 7 
+},
+{
+    "id": "PROD004",
+    "name": "Daisy Marc Jacobs",
+    "tag": "Playful Bloom",
+    "text": "Step into a world of youthful charm and whimsical beauty with Daisy by Marc Jacobs Eau de Toilette. This delightful fragrance captures the essence of carefree days filled with sunshine and laughter. With its fresh and feminine blend of floral and fruity notes, Daisy is the perfect scent for those who embrace life with a playful spirit and an open heart. It's an enchanting fragrance that radiates happiness and positivity.",
+    "photos": ["DaisyMarcJacobs.jpeg", "DaisyMarcJacobs2.jpeg"],
+    "price": 34800,
+    "qty": 0,
+    "availableQty": 10
+},
+{
+    "id": "PROD005",
+    "name": "Sublime Serenity",
+    "tag": "Embrace Tranquil Elegance",
+    "text": "Discover the essence of tranquility and elegance with Sublime Serenity, a fragrance designed to evoke peace and inner calm. This exquisite scent blends delicate floral and soft woody notes to create a harmonious and soothing aroma. Sublime Serenity is perfect for those seeking a moment of relaxation and a touch of refined luxury in their daily routine.",
+    "photos": ["sublimeSerenity.jpeg", "sublimeSerenity2.jpeg"],
+    "price": 34560,
+    "qty": 0,
+    "availableQty": 34
+},
+{
+    "id": "PROD006",
+    "name": "Gucci Flora",
+    "tag": "Bloom with Elegance",
+    "text": "Immerse yourself in a world of floral elegance with Gucci Flora Eau de Toilette. This enchanting fragrance is a celebration of vibrant blooms and lush gardens, capturing the essence of femininity and sophistication. With its harmonious blend of fresh and floral notes, Gucci Flora evokes a sense of timeless beauty and grace, making it a perfect choice for those who appreciate classic, refined scents.",
+    "photos": ["gucciFlora.jpeg", "gucciFlora2.jpeg"],
+    "price": 16800,
+    "qty": 0,
+    "availableQty": 16
+},
+{
+    "id": "PROD007",
+    "name": "Jeanne Lanvin",
+    "tag": "Timeless Elegance in a Bottle",
+    "text": "Experience the timeless charm and sophistication of Jeanne Lanvin Eau de Parfum. This delightful fragrance embodies the essence of Parisian elegance, blending fresh and fruity notes with soft florals to create a captivating and feminine scent. Jeanne Lanvin is a tribute to the founder of the Lanvin fashion house, reflecting her enduring legacy of style and grace. Perfect for the modern woman, this fragrance exudes a sense of effortless chic and refinement.",
+    "photos": ["JeanneLanvin.jpeg", "JeanneLanvin2.jpeg"],
+    "price": 12800,
+    "qty": 0,
+    "availableQty": 12
+},
+{
+    "id": "PROD08",
+    "name": "Sea Shore",
+    "tag": "Embrace the Ocean Breeze",
+    "text": "Embrace the refreshing and invigorating spirit of the ocean with Sea Shore, a fragrance that captures the essence of a coastal escape. This scent combines fresh, aquatic notes with hints of citrus and soft florals to evoke the feeling of a gentle sea breeze and sun-warmed sand. Sea Shore is perfect for those who love the serenity and freedom of the seaside, bringing a touch of the ocean's tranquility into everyday life.",
+    "photos": ["seaShore.jpeg", "SeaShore2.jpeg"],
+    "price": 34000,
+    "qty": 0,
+    "availableQty": 4
+},
+{
+    "id": "PROD009",
+    "name": "Chanel Paris",
+    "tag": "Timeless Parisian Elegance",
+    "text": "Experience the romantic allure of the City of Light with Paris – Paris by CHANEL Eau de Parfum. This exquisite fragrance captures the essence of Parisian elegance and sophistication, blending vibrant citrus notes with delicate florals and a touch of woody warmth. Paris – Paris embodies the spirit of a leisurely stroll along the Seine, the charm of blooming gardens, and the timeless beauty of Paris. Perfect for those who adore classic, refined scents with a modern twist.",
+    "photos": ["chanelParis.jpeg", "chanelParis2.jpeg"],
+    "price": 56780,
+    "qty": 0,
+    "availableQty": 9 
+},
+{
+    "id": "PROD010",
+    "name": "Zara [Blue Spirit]",
+    "tag": "Energize Your Essence",
+    "text": "Dive into the invigorating essence of Zara Blue Spirit Eau de Toilette, a fragrance that captures the fresh and dynamic spirit of the ocean. This scent combines vibrant citrus notes with refreshing aquatic and herbal accords, creating a revitalizing and energizing aroma. Perfect for those who love adventure and the open sea, Blue Spirit is a modern and youthful fragrance that embodies freedom and vitality.",
+    "photos": ["Zara[Blue-Spirit].jpeg", "Zara[Blue-Spirit]2.jpeg"],
+    "price": 56000,
+    "qty": 0,
+    "availableQty": 6
+},
+{
+    "id": "PROD011",
+    "name": "Fratelli Diamanati",
+    "tag": "Luxury Redefined",
+    "text": "Indulge in the luxurious and captivating scent of Fratelli Diamanati Eau de Parfum. This exquisite fragrance is a masterpiece of Italian craftsmanship, blending rich and sophisticated notes to create an aura of elegance and opulence. Fratelli Diamanati is perfect for those who appreciate timeless luxury and refined scents, offering a sensual and enchanting experience that leaves a lasting impression.",
+    "photos": ["fratelliDiamanati.jpeg", "fratelliDiamanati2.jpeg"],
+    "price": 45000,
+    "qty": 0,
+    "availableQty": 5
+},
+{
+    "id": "PROD012",
+    "name": "Seed Of Life",
+    "tag": "Nature's Renewal",
+    "text": "Experience the essence of renewal and vitality with Seed of Life, a fragrance that celebrates the cycle of life and the beauty of nature. This invigorating scent combines fresh, green notes with delicate florals and a touch of earthy warmth, creating a harmonious and uplifting aroma. Seed of Life is perfect for those who embrace new beginnings and the natural world, offering a sense of rejuvenation and tranquility.",
+    "photos": ["seedOfLife.jpeg", "SeedOfLife2.jpeg"],
+    "price": 59000,
+    "qty": 0,
+    "availableQty": 4
+},
+{
+    "id": "PROD013",
+    "name": "Lasting Love",
+    "tag": "Eternal Romance",
+    "text": "Celebrate enduring romance with Lasting Love, a fragrance that captures the essence of timeless affection and deep connections. This enchanting scent blends warm, sensual notes with delicate florals and rich, woody undertones, creating a mesmerizing aroma that lingers on the skin. Perfect for those who cherish the beauty of lasting relationships, Lasting Love is an elegant and unforgettable fragrance.",
+    "photos": ["lastingLove.jpeg", "lastingLove2.jpeg"],
+    "price": 67000,
+    "qty": 0,
+    "availableQty": 9
+},
+{
+    "id": "PROD014",
+    "name": "Serene",
+    "tag": "Pure Tranquility",
+    "text": "Immerse yourself in tranquility and peace with Serene, a fragrance that evokes a sense of calm and balance. This exquisite scent blends soothing floral notes with gentle citrus and warm, earthy undertones to create a harmonious and relaxing aroma. Serene is perfect for those seeking a moment of stillness and relaxation amidst the chaos of everyday life, offering a sanctuary of serenity in a bottle.",
+    "photos": ["serene.jpeg", "serene2.jpeg"],
+    "price": 93000,
+    "qty": 0,
+    "availableQty": 3
+},
+{
+    "id": "PROD015",
+    "name": "Radiant Moon",
+    "tag": "Luminous Night Elegance",
+    "text": "Illuminate your evenings with Radiant Moon, a fragrance that captures the mysterious and enchanting beauty of the night. This captivating scent blends shimmering floral notes with warm, sensual undertones, creating an aura of elegance and allure. Radiant Moon is perfect for those who seek to embrace the magic of the night and radiate confidence and sophistication.",
+    "photos": ["radiantMoon.png", "radiantMoon.png"],
+    "price": 14500,
+    "qty": 0,
+    "availableQty": 10
+},
+{
+    "id": "PROD016",
+    "name": "Abercombie & Fitch",
+    "tag": "Exclusive for women",
+    "text": "Experience the essence of sophistication with Abercombie & Fitch. This exquisite fragrance captures the timeless elegance and modern allure of the contemporary woman. With a harmonious blend of floral and woody notes, Abercombie & Fitch evokes a sense of confidence and grace, making it the perfect companion for any occasion. Embrace the luxury and let your presence be unforgettable.",
+    "photos": ["abercombie&Fitch2.jpeg", "abercombie&Fitch.jpeg"],
+    "price": 148500,
+    "qty": 0,
+    "availableQty": 9
+}
+]

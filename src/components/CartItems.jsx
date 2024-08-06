@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 
 
 import blissfulWand from '../../public/images/blissful-wand.jpeg';
-import RadiantDelight from '../../public/images/radiant-delight.jpeg';
 
 import { useNavigate } from "react-router";
 import { CartContext } from './CartContext.jsx';
@@ -82,7 +81,7 @@ export default function CartItems() {
         <div key={product.id} className="cart-item flex flex-col sm:flex-row justify-center items-center">
                         
             <div className="cart-item-img w-full sm:w-[25%] aspect-square ">
-                <img className="w-full h-full object-center object-cover" src={`https://api.timbu.cloud/images/${product.productImage[1].url}`} alt="Radiant Delight" />
+                <img className="w-full h-full object-center object-cover" src={`/perfumeImages/${product.productImage[1]}`} alt="Radiant Delight" />
             </div>
             <div className="cart-item-details text-tradyPink w-full sm:w-[75%] px-5 pt-8 md:pt-0 flex flex-col justify-left gap-4">
                 <div className="w-full flex flex-row justify-between ">

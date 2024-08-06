@@ -23,19 +23,19 @@ export default function ProductHero() {
     }, [cartContent])
 
 
-    const [currentImage, setCurrentImage] = useState(`https://api.timbu.cloud/images/${shoppingBasket.productImage[1].url}`);
-    const [imgIndex, setImgIndex] = useState(1);
+    const [currentImage, setCurrentImage] = useState(`/perfumeImages/${shoppingBasket.productImage[0]}`);
+    const [imgIndex, setImgIndex] = useState(0);
 
     // Function to loop through the images and display them in a thumbnail
     const thumbnail = shoppingBasket.productImage.map((image, index) => (
         <a href='#' className={`block w-28 aspect-square rounded-md overflow-hidden outline-2 outline-offset-4 outline ${imgIndex === index ? 'outline-tradyPink' : 'outline-offWhite'}`} key={index}
         onClick={() => {
-            setCurrentImage(`https://api.timbu.cloud/images/${image.url}`);
+            setCurrentImage(`/perfumeImages/${image}`);
 
             setImgIndex(index);
         }}
         >
-            <img src={`https://api.timbu.cloud/images/${image.url}`} alt="" className="w-full h-full object-cover object-center aspect-square"/>
+            <img src={`/perfumeImages/${image}`} alt="" className="w-full h-full object-cover object-center aspect-square"/>
         </a>
     ))
 

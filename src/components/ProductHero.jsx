@@ -42,7 +42,7 @@ export default function ProductHero() {
     useEffect(() => {
         // Effect to scroll back to the top
         window.scrollTo(0, 0);
-    }, [shoppingBasket])
+    }, [])
 
 
     // Example of updating cartContent and saving to local storage:

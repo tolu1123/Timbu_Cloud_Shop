@@ -4,7 +4,6 @@ import ReactDOM from "react-dom/client";
 
 import { CartContext } from "./CartContext";
 import ThrillData from "./ThrillData";
-import product from "./product";
 
 export default function ThrillSection() {
 
@@ -12,7 +11,6 @@ export default function ThrillSection() {
     const [currentPage, setCurrentPage] = useState(3);
     const [productsPerPage, setProductsPerPage] = useState(4);
     const [perfumes, setPerfumes] = useState([])
-    const selectedProducts = product.slice(4, 8);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

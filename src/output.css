@@ -1873,6 +1873,10 @@ input[type=number] {
 }
 
 @media (max-width: 639px) {
+  :root {
+    scrollbar-width: 0;
+    scroll-behavior: smooth;
+  }
   .transTop {
     transform: translateY(-2000%);
     opacity: 0;
